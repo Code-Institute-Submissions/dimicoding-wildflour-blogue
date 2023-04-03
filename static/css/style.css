@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&display=swap');
+
+h1 {
+    font-family: 'Licorice', cursive;
+    font-size: 60px;
+    left: -35px;
+    bottom: -25px;
+    position: relative;
+    color: #DD818E;
+}
+
+.sub-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    color: #4B2921;
+    letter-spacing: 4px;
+    position: relative;
+    top: -30px;
+    right: -2px;
+}
+
+.space {
+    margin-top: 10px;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: #F3ECED;
+    height: 125px;
+    width: 125px;
+    display: inline-block;
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+body {
+    height: 2000px;
+}
+.sm-circle{
+    height: 100px;
+    width: 100px;
+}
+.sm-h1{
+    font-size: 40px;
+    left: -15px;
+    bottom: -20px;
+}
+.sm-h4{
+    right: -7px;
+    font-size: 8px;
+}
+.costom {
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+hr{
+    height: 200px;
+}
+.navbar-toggler{
+    background-color: rgba(245, 245, 245, 0.9);
+}
