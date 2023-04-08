@@ -8,6 +8,9 @@ h1 {
     position: relative;
     color: #DD818E;
 }
+header{
+    background-color: #F5F5F5 ;
+}
 
 .sub-heading {
     font-family: 'Montserrat', sans-serif;
@@ -20,8 +23,8 @@ h1 {
     right: -2px;
 }
 
-.space {
-    margin-top: 10px;
+.space-p {
+    padding-top: 15px;
 }
 
 .circle {
@@ -45,20 +48,133 @@ body {
 }
 .sm-h1{
     font-size: 40px;
-    left: -15px;
-    bottom: -20px;
+    bottom: -10px;
 }
 .sm-h4{
     right: -7px;
     font-size: 8px;
 }
-.costom {
-    background-color: rgba(245, 245, 245, 0.9);
-}
 
 hr{
     height: 200px;
 }
-.navbar-toggler{
-    background-color: rgba(245, 245, 245, 0.9);
+
+#custom {
+    overflow:hidden;
+    background-color: #F5F5F5 ;
+}
+.dropdown-menu{
+    background-color: #f5f5f5;
+    border: unset;
+
+}
+.content{
+    padding: 16px;
+}
+
+.sticky{
+    position: fixed;
+    float: right;
+    top: 0;
+    padding: 10px 8%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: 1s;
+}
+.sticky + .content {
+    padding-top: 70px;
+  }
+
+img{
+    width: 100%;
+}
+.top-margin{
+    margin-top: 50px;
+}
+/*______________________________________ <a> inside the image__________________________________________________*/
+.role{
+    position: relative;
+}
+.centralize-tag{
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position:unset;
+  }
+
 }

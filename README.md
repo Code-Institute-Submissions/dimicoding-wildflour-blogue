@@ -106,3 +106,8 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+## Credits
+
+sticky nav bar- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_navbar_sticky
