@@ -80,6 +80,7 @@ hr{
     display: flex;
     align-items: center;
     width: 100%;
+    z-index: 9999;
     transition: 1s;
 }
 .sticky + .content {
