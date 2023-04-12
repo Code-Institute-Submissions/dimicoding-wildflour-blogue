@@ -8,7 +8,8 @@
     position: relative;
     color: #DD818E;
 }
-#logo-footer{
+
+.logo-brand{
     font-family: 'Licorice', cursive;
     font-size: 40px;
     position: relative;
@@ -28,6 +29,7 @@ header{
     position: relative;
     top: -30px;
     right: -2px;
+    z-index: 5;
 }
 
 .space-p {
@@ -40,10 +42,12 @@ header{
     height: 125px;
     width: 125px;
     display: inline-block;
+    z-index: 5;
+    position: sticky;
 }
 
 .navbar-brand {
-    margin-left: 20px;
+    padding-top: 15px;
 }
 
 body {
@@ -87,12 +91,15 @@ hr{
     display: flex;
     align-items: center;
     width: 100%;
-    z-index: 9999;
+    z-index: 1;
     transition: 1s;
 }
 .sticky + .content {
     padding-top: 70px;
 }
+.navbar {
+    z-index: 2;
+  }
 
 .top-margin{
     margin-top: 100px;

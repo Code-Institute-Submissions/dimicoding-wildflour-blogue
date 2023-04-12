@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>WildFlour</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container d-none d-md-block space-p text-center">
+            <div class="row">
+                <div class="col" style="height: 125px;">
+                    <span class="circle">
+                        <h1 class="logo">Wildflour</h1>
+                    </span>
+                    <h4 class="sub-heading">PÂTISSERIE</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md" id="custom">
+        <div class="container" bis_skin_checked="1">
+            <a class="navbar-brand d-md-none d-lg-none d-xl-none d-xxl-none" href="#">
+                <h2 class="sm-h1 logo">Wildflour</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent"
+                bis_skin_checked="1">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="fa-solid fa-wheat-awn"></i> 
+                            RecipeBook
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">All Recipes</a></li>
+                            <li><a class="dropdown-item" href="#">Chocolate Recipes </a></li>
+                            <li><a class="dropdown-item" href="#">Fruits</a></li>
+                            <li><a class="dropdown-item" href="#">Birthday & Wedding</a></li>
+                            <li><a class="dropdown-item" href="#">Gluten Free</a></li>
+                            <li><a class="dropdown-item" href="#">Christmas Recipes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-plus"></i> Create</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-door-open"></i> Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-user-plus"></i> Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content mt-5">
+        <article>
+            <section class="top-margin">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-4 col-md-4 align-self-center">
+                            <h2>Explore creative recipes with world wide pastries</h2>
+                        </div>
+                        <div class="col-8 col-md-8">
+                            <img class="img-fluid"
+                                src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png" alt="">
+                        </div>
+                    </div>
+            </section>
+            <section class="top-margin">
+                <div class="container text-center">
+                    <div class="row justify-content-center">
+                        <div class="col col-md-4 mt-5">
+                            <h2>Categories:</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Vegan</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Chocolate Recipes
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Fruits</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Gluten Free</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Birthday & Wedding
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-2 mt-3">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Christmas Recipes
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="top-margin">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#">
+                                <div class="position-relative">
+                                    <img class="img-fluid"
+                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                        alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle">Create your Recipes
+                                    </h3>
+                                    <button type="button"
+                                        class="btn btn-outline-dark position-absolute top-70 start-50 translate-middle">Begin</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </section>
+            <section class="top-margin">
+                <div class="container text-center">
+                    <div class="row align-self-center">
+                        <div class="col">
+                            <h3>What can we do for you?</h3>
+                            <button type="button" class="btn btn-outline-dark">Contact</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <ul>
+    {% for recipe in object_list %}
+        <li><a href="{% url 'first_recipe' recipe.pk %}">{{ recipe.title }}</a> - {{ recipe.author }}<br/>
+        {{ recipe.category }}
+        {{ recipe.exerpt }}</li>
+    {% endfor %}
+    </ul>
+
+
+
+    
+    <footer class="top-margin footer-bgd">
+        <div class="container top-padding">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div>
+                        <h3 id="logo-footer">Wildflour</h3>
+                        <p class="mb-30 footer-desc">Welcome to this pastry blog, get inspired by all sorts of sweets
+                            and share your working
+                            recipes with everyone. </p>
+                    </div>
+                </div>
+                <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6">
+                    <div class="">
+                        <h4>Quick Link</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="text-decoration-none">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">All Recipes</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Create</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div>
+                        <h4>Categories</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="text-decoration-none">All Recipes</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Vegan</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Chocolate Recipes</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Fruits</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Gluten Free</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Birthday & Wedding</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">Christmas Recipes</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div>
+                        <h4>Newsletter</h4>
+                        <div>
+                            <label for="Newsletter" class="form-label">Subscribe To Our Newsletter</label>
+                            <input type="text" class="form-control" Placeholder="Enter Your Email">
+                            <button class="btn btn-danger mt-3">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="copyright">
+                    <p>Developed and Maintained by <a href="#" target="_blank">Wildflour-Pâtisserie</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("custom");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous">
+        </script>
+    <script src="https://kit.fontawesome.com/126e964bae.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
