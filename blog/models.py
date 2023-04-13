@@ -16,14 +16,14 @@ CATEGORY = (
 )
 
 DIFICULTY = (
-    ('Easy', "easy"),
-    ('Medium', "medium"),
-    ('Hard', "hard"),
+    ('Easy', "Easy"),
+    ('Medium', "Medium"),
+    ('Hard', "Hard"),
 )
 
 
 class Recipe(models.Model):
-    
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_recipe")
@@ -32,7 +32,7 @@ class Recipe(models.Model):
     total_time = models.IntegerField(default=60)
     created_recipe = models.DateTimeField(auto_now_add=True)
     updated_recipe = models.DateTimeField(auto_now=True)
-    body = models.TextField()
+    content = models.TextField(blank=True)
     featured_image = CloudinaryField("image", default='placeholder')
     exerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)

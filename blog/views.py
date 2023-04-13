@@ -1,10 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Recipe
-
-
-#def home(request):
-#   return render(request, 'base.html', {})
+from .forms import RecipeForm
 
 
 class HomeView(ListView):
@@ -18,10 +15,17 @@ class FirstRecipeView(DetailView):
 
 
 class CreateRecipeView(CreateView):
-    model = Recipe
-    template_name = "create.html"
-    fields = '__all__'
+    form_class = RecipeForm
+    template_name = 'create.html'
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+       
+        return response
 
 
-def test(request):
-    return render(request, 'index.html')
+# #class CreateRecipeView(CreateView):
+#     model = Recipe
+#     template_name = "create.html"
+#     fields = '__all__'
+

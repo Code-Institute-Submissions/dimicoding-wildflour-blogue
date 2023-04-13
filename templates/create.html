@@ -3,10 +3,14 @@
 {% block content %}
 
 <h1>Create Your Own Blog Recipe!</h1>
+<div id="summernote"></div>
 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p}}
-    <button>Submit</button>
 
-{% endblock %}
+    <button>Submit</button>
+</form>
+
+
+{% endblock content %}
