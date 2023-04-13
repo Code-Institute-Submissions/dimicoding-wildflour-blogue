@@ -19,9 +19,11 @@
         <div class="container d-md-block space-p text-center">
             <div class="row">
                 <div class="col" style="height: 80px;">
-                    <div class="circle">
-                        <h1 class="logo">Wildflour</h1>
-                    </div>
+                    <a href="{% url 'home' %}">
+                        <div class="circle">
+                            <h1 class="logo">Wildflour</h1>
+                        </div>
+                    </a>                    
                     <h4 class="sub-heading">PÂTISSERIE</h4>
                 </div>
             </div>
@@ -55,7 +57,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-plus"></i> Create</a>
+                            <a class="nav-link" href="{% url 'create_recipe' %}"><i class="fa-solid fa-plus"></i> Create</a>
                         </li>
                         {% else %}
                         <li class="nav-item">
