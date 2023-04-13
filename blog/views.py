@@ -9,9 +9,13 @@ from .models import Recipe
 
 class HomeView(ListView):
     model = Recipe
-    template_name = "base.html"
+    template_name = "list-view.html"
     
 
 class FirstRecipeView(DetailView):
     model = Recipe
     template_name = "first-recipe.html"
+
+
+def test(request):
+    return render(request, 'index.html')

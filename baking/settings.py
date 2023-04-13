@@ -35,7 +35,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["8000-dimicoding-wildflour-blo-90dqef3hn8.us2.codeanyapp.com"]
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'blog',
 ]
 

@@ -5,18 +5,19 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 CATEGORY = (
-    (0, "All Recipes"),
-    (1, "Vegan"),
-    (2, "Chocolate Recipes"),
-    (3, "Fruits"),
-    (4, "Gluten Free"),
-    (5, "Birthday and Wedding"),
-    (6, "Christmas Recipes"),
+    ('All Recipes', "All Recipes"),
+    ('Vegan', "Vegan"),
+    ('Chocolate Recipes', "Chocolate Recipes"),
+    ('Fruits', "Fruits"),
+    ('Gluten Free', "Gluten Free"),
+    ('Birthday & Wedding', "Birthday & Wedding"),
+    ('Christmas Recipes', "Christmas Recipes"),
 )
+
 DIFICULTY = (
-    (0, "Easy"),
-    (1, "Medium"),
-    (2, "Hard"),
+    ('Easy', "easy"),
+    ('Medium', "medium"),
+    ('Hard', "hard"),
 )
 
 
@@ -25,8 +26,8 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_recipe")
-    category = models.IntegerField(choices=CATEGORY, default=0)
-    dificulty = models.IntegerField(choices=DIFICULTY, default=0)
+    category = models.CharField(max_length=20, choices=CATEGORY, default='all')
+    dificulty = models.CharField(max_length=10, choices=DIFICULTY, default='Easy')
     total_time = models.IntegerField(default=60)
     created_recipe = models.DateTimeField(auto_now_add=True)
     updated_recipe = models.DateTimeField(auto_now=True)
