@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 from .models import Recipe
+from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget
 
 
@@ -9,6 +10,15 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = '__all__'
+        exclude = ['likes',]
         widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'author': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'dificulty': forms.Select(attrs={'class': 'form-control'}),
+            'total_time': forms.NumberInput(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(),
+            'exerpt': forms.TextInput(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
         }
