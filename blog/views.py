@@ -17,6 +17,7 @@ class FirstRecipeView(DetailView):
 class CreateRecipeView(CreateView):
     form_class = RecipeForm
     template_name = 'create.html'
+    prepopulated_fields = {'slug': ('title',)},
 
     def form_valid(self, form):
         response = super().form_valid(form)
