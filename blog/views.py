@@ -9,9 +9,9 @@ class HomeView(ListView):
     template_name = "list-view.html"
     
 
-class FirstRecipeView(DetailView):
+class TheRecipeView(DetailView):
     model = Recipe
-    template_name = "first-recipe.html"
+    template_name = "the-recipe.html"
 
 
 class CreateRecipeView(CreateView):
