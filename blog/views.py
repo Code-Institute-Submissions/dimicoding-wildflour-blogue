@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Recipe
-from .forms import RecipeForm
+from .forms import RecipeForm, EditForm
 
 
 class HomeView(ListView):
@@ -22,7 +22,6 @@ class CreateRecipeView(CreateView):
 
 class EditRecipeView(UpdateView):
     model = Recipe
-    form_class = RecipeForm
-    exclude = ['author',]
+    form_class = EditForm
     template_name = 'edit-recipe.html'
 

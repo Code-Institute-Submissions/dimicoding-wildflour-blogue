@@ -10,7 +10,6 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = '__all__'
-        exclude = ['likes',]
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'slug': forms.TextInput(attrs={'class': 'form-control'}),
@@ -22,8 +21,27 @@ class RecipeForm(forms.ModelForm):
             'exerpt': forms.TextInput(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
-        
-    def form_valid(self, form):
-        form.instance.title = slugify(form.cleaned_data['slug'])
-        return super().form_valid(form)
 
+
+class EditForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ['title',
+                  'slug',
+                  'category',
+                  'dificulty',
+                  'total_time',
+                  'content',
+                  'exerpt',
+                  'status']
+
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'category': forms.Select(attrs={'class': 'form-control'}),
+            'dificulty': forms.Select(attrs={'class': 'form-control'}),
+            'total_time': forms.NumberInput(attrs={'class': 'form-control'}),
+            'content': SummernoteWidget(),
+            'exerpt': forms.TextInput(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
+        }

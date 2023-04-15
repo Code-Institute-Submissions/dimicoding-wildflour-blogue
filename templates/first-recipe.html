@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-<div id="summernote">Hello Summernote</div>
-<p>hello summernote</p>
+
+
 {% block content %}
 <h1>{{ recipe.title}}</h1>
 <div>{{ recipe.content|safe }}
@@ -11,6 +11,7 @@
 <p>{{ recipe.total_time }}</p>
 <p>{{ recipe.status }}</p>
 <p>{{ recipe.exerpt }}</p>
+<a href="{% url 'edit_recipe' recipe.pk %}">Edit</a>
 <p>{{ recipe.likes }}</p>
 
 {% endblock content %}
