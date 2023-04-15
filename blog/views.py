@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -19,14 +19,10 @@ class CreateRecipeView(CreateView):
     form_class = RecipeForm
     template_name = 'create.html'
 
-    def form_valid(self, form):
-        response = super().form_valid(form)
-       
-        return response
 
-
-# #class CreateRecipeView(CreateView):
-#     model = Recipe
-#     template_name = "create.html"
-#     fields = '__all__'
+class EditRecipeView(UpdateView):
+    model = Recipe
+    form_class = RecipeForm
+    exclude = ['author',]
+    template_name = 'edit-recipe.html'
 

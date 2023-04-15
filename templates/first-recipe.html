@@ -3,8 +3,8 @@
 <p>hello summernote</p>
 {% block content %}
 <h1>{{ recipe.title}}</h1>
-<div>{{ recipe.body }}</div>
-
+<div>{{ recipe.content|safe }}
+</div>
 <p>{{ recipe.author }}</p>
 <p>{{ recipe.category }}</p>
 <p>{{ recipe.dificulty }}</p>

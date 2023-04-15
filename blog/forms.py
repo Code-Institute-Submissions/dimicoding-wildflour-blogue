@@ -22,3 +22,8 @@ class RecipeForm(forms.ModelForm):
             'exerpt': forms.TextInput(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
+        
+    def form_valid(self, form):
+        form.instance.title = slugify(form.cleaned_data['slug'])
+        return super().form_valid(form)
+

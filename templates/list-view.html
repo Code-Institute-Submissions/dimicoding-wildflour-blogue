@@ -5,8 +5,10 @@
 {% block content %}
 <ul>
     {% for recipe in object_list %}
-        <li><a href="{% url 'first_recipe' recipe.pk %}">{{ recipe.title }}</a> - {{ recipe.author }}<br/>
+        <li><a href="{% url 'first_recipe' recipe.pk %}">
+        {{ recipe.title }}</a> - {{ recipe.author }}<br/>
         {{ recipe.category }}
+        <a href="{% url 'edit_recipe' recipe.pk %}">Edit</a>
         {{ recipe.exerpt }}</li>
     {% endfor %}
     </ul>
