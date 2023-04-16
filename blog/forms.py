@@ -9,7 +9,15 @@ class RecipeForm(forms.ModelForm):
     """ Used from https://github.com/summernote/django-summernote """
     class Meta:
         model = Recipe
-        fields = '__all__'
+        fields = ['title',
+                  'slug',
+                  'author',
+                  'category',
+                  'dificulty',
+                  'total_time',
+                  'content',
+                  'exerpt',
+                  'status']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'slug': forms.TextInput(attrs={'class': 'form-control'}),

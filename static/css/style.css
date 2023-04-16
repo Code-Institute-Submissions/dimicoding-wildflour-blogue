@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&display=swap');
 
+a {
+    text-decoration: unset;
+    color: unset;
+}
+
 .logo {
     font-family: 'Licorice', cursive;
     font-size: 60px;

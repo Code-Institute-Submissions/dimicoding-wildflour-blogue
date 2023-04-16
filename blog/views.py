@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = Recipe
     template_name = "list-view.html"
+    ordering = ['-created_recipe']
     
 
 class TheRecipeView(DetailView):

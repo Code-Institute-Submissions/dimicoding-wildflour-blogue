@@ -25,9 +25,11 @@
                         <small class="text-body-secondary">{{ recipe.category }} {{ recipe.dificulty }}
                             {{recipe.total_time}}</small>
                     </p>
+                    {% if user.is_authenticated %}
                     <button class="btn btn-success">
                         <a href="{% url 'edit_recipe' recipe.pk %}">Edit</a>
                     </button>
+                    {% endif %}
                 </div>
             </div>
         </div>

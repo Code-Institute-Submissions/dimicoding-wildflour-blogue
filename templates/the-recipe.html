@@ -11,8 +11,10 @@
 <p>{{ recipe.total_time }}</p>
 <p>{{ recipe.status }}</p>
 <p>{{ recipe.exerpt }}</p>
-<a href="{% url 'edit_recipe' recipe.pk %}">Edit</a>
-<a href="{% url 'delete_recipe' recipe.pk %}">Delete</a>
+{% if user.is_authenticated %}
+<button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
+<button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
+{% endif %}
 <p>{{ recipe.likes }}</p>
 
 {% endblock content %}
