@@ -12,6 +12,7 @@
 <p>{{ recipe.status }}</p>
 <p>{{ recipe.exerpt }}</p>
 <a href="{% url 'edit_recipe' recipe.pk %}">Edit</a>
+<a href="{% url 'delete_recipe' recipe.pk %}">Delete</a>
 <p>{{ recipe.likes }}</p>
 
 {% endblock content %}

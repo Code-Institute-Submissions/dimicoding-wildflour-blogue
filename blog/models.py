@@ -42,6 +42,7 @@ class Recipe(models.Model):
         return self.title + ' | ' + str(self.author)
 
     def get_absolute_url(self):
-        return reverse('first_recipe', args=(str(self.id)) )
+        return reverse('home')
+        
 
 
