@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Recipe
+from .models import Recipe, Category
 from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget
 

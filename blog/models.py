@@ -5,16 +5,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-CATEGORY = (
-    ('All Recipes', "All Recipes"),
-    ('Vegan', "Vegan"),
-    ('Chocolate Recipes', "Chocolate Recipes"),
-    ('Fruits', "Fruits"),
-    ('Gluten Free', "Gluten Free"),
-    ('Birthday & Wedding', "Birthday & Wedding"),
-    ('Christmas Recipes', "Christmas Recipes"),
-)
-
 DIFICULTY = (
     ('Easy', "Easy"),
     ('Medium', "Medium"),
@@ -22,12 +12,28 @@ DIFICULTY = (
 )
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    image = CloudinaryField("image", default='placeholder')
+    description = models.TextField(blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+
 class Recipe(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_recipe")
-    category = models.CharField(max_length=20, choices=CATEGORY, default='all')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.CharField(max_length=255, default="all" )
     dificulty = models.CharField(max_length=10, choices=DIFICULTY, default='Easy')
     total_time = models.IntegerField(default=60)
     created_recipe = models.DateTimeField(auto_now_add=True)

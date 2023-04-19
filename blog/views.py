@@ -1,14 +1,31 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Recipe
 from .forms import RecipeForm, EditForm
 from django.urls import reverse_lazy
 
+
 class HomeView(ListView):
     model = Recipe
     template_name = "list-view.html"
     ordering = ['-created_recipe']
+
+
+def categories(request):
+    """
+    Renders the categories page
+    """
+    return render(request, 'categories.html')
     
+# def CategoryView(request, cats):
+#     """
+#     Renders the posts filtered by categories
+#     """
+#     category_posts = Post.objects.filter(
+#         category__title__contains=cats, status=1)
+#     return render(request, 'categories.html', {
+#         'cats': cats.title(), 'category_posts': category_posts})
+
 
 class TheRecipeView(DetailView):
     model = Recipe
