@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-dimicoding-wildflour-blo-m3n0e1c9r8.us2.codeanyapp.com"]
+ALLOWED_HOSTS = ["localhost"]
 
 # Application definition
 

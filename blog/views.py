@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Recipe
+from .models import Recipe, Category
 from .forms import RecipeForm, EditForm
 from django.urls import reverse_lazy
 
@@ -11,12 +11,17 @@ class HomeView(ListView):
     ordering = ['-created_recipe']
 
 
-def categories(request):
+def Category(request, cat):
     """
     Renders the categories page
     """
-    return render(request, 'categories.html')
-    
+    return render(
+        request,
+        'categories.html',
+        {
+            "cat": "cat",
+        })
+
 # def CategoryView(request, cats):
 #     """
 #     Renders the posts filtered by categories
@@ -48,4 +53,3 @@ class DeleteRecipeView(DeleteView):
     model = Recipe
     template_name = 'delete-recipe.html'
     success_url = reverse_lazy('home')
-    
