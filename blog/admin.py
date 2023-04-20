@@ -18,5 +18,5 @@ class CategoryAdmin(admin.ModelAdmin):
     """
     Add fields for Category in admin panel
     """
-    list_display = ['name', 'image', 'updated_at']
-    search_fields = ['name', 'description']
+    list_display = ['title', 'image', 'description']
+    search_fields = ['title', 'description']

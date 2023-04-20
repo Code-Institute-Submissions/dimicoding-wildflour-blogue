@@ -19,7 +19,7 @@ def Category(request, cat):
         request,
         'categories.html',
         {
-            "cat": "cat",
+            "cat": cat,
         })
 
 # def CategoryView(request, cats):

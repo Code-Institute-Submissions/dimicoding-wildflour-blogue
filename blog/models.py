@@ -13,7 +13,7 @@ DIFICULTY = (
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     image = CloudinaryField("image", default='placeholder')
     description = models.TextField(blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -22,7 +22,7 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     def __str__(self):
-        return self.name
+        return self.title
 
     def get_absolute_url(self):
         return reverse('home')
@@ -33,7 +33,7 @@ class Recipe(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.CharField(max_length=255, default="all" )
+    category = models.CharField(max_length=255, default="all")
     dificulty = models.CharField(max_length=10, choices=DIFICULTY, default='Easy')
     total_time = models.IntegerField(default=60)
     created_recipe = models.DateTimeField(auto_now_add=True)

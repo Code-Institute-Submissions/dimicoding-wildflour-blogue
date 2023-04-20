@@ -4,7 +4,8 @@ from .models import Recipe, Category
 from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget
 
-categories = Category.objects.all().values_list('name', 'name')
+categories = Category.objects.all().values_list('title', 'title')
+
 cat_list = []
 for item in categories:
     cat_list.append(item)
@@ -51,7 +52,7 @@ class EditForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'slug': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(choices=cat_list, attrs={'class': 'form-control'}),
             'dificulty': forms.Select(attrs={'class': 'form-control'}),
             'total_time': forms.NumberInput(attrs={'class': 'form-control'}),
             'content': SummernoteWidget(),
