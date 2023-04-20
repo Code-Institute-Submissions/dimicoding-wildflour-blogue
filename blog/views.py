@@ -18,7 +18,7 @@ class HomeView(ListView):
         return context
 
 
-def CategoryListView(request, cat):
+def CategoryListView(request):
     """
     Displays a page with all categories in the blog 
     """

@@ -53,14 +53,13 @@
                             <ul class="dropdown-menu">
                                 {% for item in cat_list %}
                                 <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
-                                    
                                 {% endfor%}
                             </ul>
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href=""><i class=""></i>
-                                All Recipes</a>
+                            <a class="nav-link" href="{% url 'categories' %}"><i class=""></i>
+                                Categories</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
