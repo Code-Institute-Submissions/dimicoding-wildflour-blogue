@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, DeleteRecipeView, Category #CategoryView
+from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, DeleteRecipeView, CategoryList #CategoryView
 from django.contrib.auth import views as auth_views
 
 
@@ -11,5 +11,5 @@ urlpatterns = [
     path('recipe/edit/<int:pk>', EditRecipeView.as_view(), name="edit_recipe"),
     path('recipe/<int:pk>/delete', DeleteRecipeView.as_view(), name="delete_recipe"),
     #path('categories/', views.Category, name="categories"),
-    path('category/<str:cat>/', Category, name="category"),
+    path('category/<str:cat>/', CategoryList, name="category"),
 ]

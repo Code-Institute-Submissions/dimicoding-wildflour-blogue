@@ -10,19 +10,25 @@ class HomeView(ListView):
     template_name = "list-view.html"
     ordering = ['-created_recipe']
 
+    def get_context_data(self, *args, **kwargs):
+        cat_list = Category.objects.all()
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        context["cat_list"] = cat_list
+        return context
 
-def Category(request, cat):
+
+def CategoryList(request, cat):
     """
     Renders the categories page
     """
-    recipe_category = Recipe.objects.filter(category=cat)
+    recipe_category = Recipe.objects.filter(category=cat.replace('-', ' '))
     return render(
         request,
         'categories.html',
         {
-            "cat": cat,
+            "cat": cat.title().replace('-', ' '),
             "recipe_category": recipe_category,
-            
+
         })
 
 # def CategoryView(request, cats):
