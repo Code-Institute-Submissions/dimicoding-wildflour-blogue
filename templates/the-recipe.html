@@ -6,7 +6,7 @@
 <div>{{ recipe.content|safe }}
 </div>
 <p>{{ recipe.author }}</p>
-<p>{{ recipe.category }}</p>
+<p><a href="{% url 'category' recipe.category %}">{{ recipe.category }}</a></p>
 <p>{{ recipe.dificulty }}</p>
 <p>{{ recipe.total_time }}</p>
 <p>{{ recipe.status }}</p>

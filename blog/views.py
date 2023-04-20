@@ -15,11 +15,14 @@ def Category(request, cat):
     """
     Renders the categories page
     """
+    recipe_category = Recipe.objects.filter(category=cat)
     return render(
         request,
         'categories.html',
         {
             "cat": cat,
+            "recipe_category": recipe_category,
+            
         })
 
 # def CategoryView(request, cats):
