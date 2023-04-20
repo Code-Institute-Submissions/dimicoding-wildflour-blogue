@@ -10,11 +10,25 @@ class HomeView(ListView):
     template_name = "list-view.html"
     ordering = ['-created_recipe']
 
+    # Dropdown menu list 
     def get_context_data(self, *args, **kwargs):
         cat_list = Category.objects.all()
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context["cat_list"] = cat_list
         return context
+
+
+def CategoryListView(request, cat):
+    """
+    Displays a page with all categories in the blog 
+    """
+    cat_list_view = Category.objects.all()
+    return render(
+        request,
+        'categories-page.html',
+        {
+            "cat_list_view": cat_list_view,
+        })
 
 
 def CategoryList(request, cat):
@@ -28,28 +42,32 @@ def CategoryList(request, cat):
         {
             "cat": cat.title().replace('-', ' '),
             "recipe_category": recipe_category,
-
         })
-
-# def CategoryView(request, cats):
-#     """
-#     Renders the posts filtered by categories
-#     """
-#     category_posts = Post.objects.filter(
-#         category__title__contains=cats, status=1)
-#     return render(request, 'categories.html', {
-#         'cats': cats.title(), 'category_posts': category_posts})
 
 
 class TheRecipeView(DetailView):
     model = Recipe
     template_name = "the-recipe.html"
 
+    # Dropdown menu list 
+    def get_context_data(self, *args, **kwargs):
+        cat_list = Category.objects.all()
+        context = super(TheRecipeView, self).get_context_data(*args, **kwargs)
+        context["cat_list"] = cat_list
+        return context
+
 
 class CreateRecipeView(CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = 'create.html'
+
+    # Dropdown menu list 
+    def get_context_data(self, *args, **kwargs):
+        cat_list = Category.objects.all()
+        context = super(CreateRecipeView, self).get_context_data(*args, **kwargs)
+        context["cat_list"] = cat_list
+        return context
 
 
 class EditRecipeView(UpdateView):

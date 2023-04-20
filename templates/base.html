@@ -45,18 +45,24 @@
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                 <div class="d-flex align-items-center">
                     <ul class="navbar-nav">
+                        <!-- Loop trough categories/display as links-->
+                        {% if cat_list %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"><i class="fa-solid fa-wheat-awn"></i> RecipeBook</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">>All Recipes</a></li>
-                                <li><a class="dropdown-item" href="#">Chocolate Recipes</a></li>
-                                <li><a class="dropdown-item" href="#">Fruits</a></li>
-                                <li><a class="dropdown-item" href="#">Birthday & Wedding</a></li>
-                                <li><a class="dropdown-item" href="#">Gluten Free</a></li>
-                                <li><a class="dropdown-item" href="#">Christmas Recipes</a></li>
+                                {% for item in cat_list %}
+                                <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
+                                    
+                                {% endfor%}
                             </ul>
                         </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href=""><i class=""></i>
+                                All Recipes</a>
+                        </li>
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'create_recipe' %}"><i class="fa-solid fa-plus"></i>
