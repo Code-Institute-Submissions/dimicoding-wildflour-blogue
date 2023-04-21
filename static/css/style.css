@@ -112,6 +112,9 @@ hr{
 .top-padding{
     padding-top: 30px;
 }
+hr{
+    height: 50px;
+}
 /*______________________________________ <a> inside the image__________________________________________________*/
 .top-70{
     top: 70%;
@@ -119,6 +122,8 @@ hr{
 .footer-bgd{
     background-color: #F5F5F5;
 }
+
+
 
 
 
