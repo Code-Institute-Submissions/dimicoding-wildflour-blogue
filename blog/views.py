@@ -33,12 +33,12 @@ def CategoryListView(request):
 
 def CategoryList(request, cat):
     """
-    Renders the categories page
+    Displays the categories page
     """
     recipe_category = Recipe.objects.filter(category=cat.replace('-', ' '))
     return render(
         request,
-        'categories.html',
+        'category.html',
         {
             "cat": cat.title().replace('-', ' '),
             "recipe_category": recipe_category,
