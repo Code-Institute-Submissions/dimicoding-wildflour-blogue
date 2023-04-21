@@ -16,8 +16,8 @@
         {% for recipe in recipe_category %}
         <div class="col mt-5 mb-4 content">
             <div class="card h-100">
-                <img src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png" class="card-img-top"
-                    alt="...">
+                <img src="{{ recipe.featured_image.url }}" class="card-img-top" width="500" height="500" style="object-fit:cover; object-position: bottom;
+                alt="...">
                 <div class="card-body">
                     <h5 class="card-title text-center">
                         <a href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>

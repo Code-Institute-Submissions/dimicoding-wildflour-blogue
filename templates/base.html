@@ -51,7 +51,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"><i class="fa-solid fa-wheat-awn"></i> RecipeBook</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'home' %}">All Recipes</a></li>
+                                <li><a class="dropdown-item" href="{% url 'categories' %}">All Recipes</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 {% for item in cat_list %}
                                 <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>

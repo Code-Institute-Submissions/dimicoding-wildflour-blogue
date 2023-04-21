@@ -22,7 +22,7 @@ def CategoryListView(request):
     """
     Displays a page with all categories in the blog 
     """
-    cat_list_view = Category.objects.all()
+    cat_list_view = Category.objects.all().values('title', 'image')
     return render(
         request,
         'categories-page.html',
