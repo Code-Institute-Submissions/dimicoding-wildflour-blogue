@@ -13,6 +13,9 @@ for item in categories:
 
 class RecipeForm(forms.ModelForm):
     """ Used from https://github.com/summernote/django-summernote """
+    
+    featured_image = CloudinaryField('image')
+
     class Meta:
         model = Recipe
         fields = ['title',
@@ -21,6 +24,7 @@ class RecipeForm(forms.ModelForm):
                   'category',
                   'dificulty',
                   'total_time',
+                  'featured_image',
                   'content',
                   'exerpt',
                   'status']
@@ -38,6 +42,8 @@ class RecipeForm(forms.ModelForm):
 
 
 class EditForm(forms.ModelForm):
+    featured_image = CloudinaryField('image')
+
     class Meta:
         model = Recipe
         fields = ['title',
@@ -45,6 +51,7 @@ class EditForm(forms.ModelForm):
                   'category',
                   'dificulty',
                   'total_time',
+                  'featured_image',
                   'content',
                   'exerpt',
                   'status']
