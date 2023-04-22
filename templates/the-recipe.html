@@ -41,14 +41,14 @@
     {% if user.is_authenticated %}
     <form class="d-inline" action="{% url 'recipe_like' recipe.pk %}" method="POST">
          {% csrf_token %}
-         {% if number_likes %}
+         {% if liked %}
          <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="fas fa-heart"></i></button>
          {% else %}
          <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="far fa-heart"></i></button>
          {% endif %}
     </form>
     {% else %}
-    <span class="text-secondary"><i class="far fa-heart"></i></span>
+    <span class="text-secondary"><a href="{% url 'account_login' %}"><i class="far fa-heart"></i></a></span>
     {% endif %}
     <span class="text-secondary">{{ number_likes }} Likes</span>
 </strong>

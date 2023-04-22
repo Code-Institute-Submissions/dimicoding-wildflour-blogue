@@ -6,6 +6,22 @@ from .forms import RecipeForm, EditForm
 from django.urls import reverse_lazy
 
 
+def RecipeLike(request, pk):
+
+    """Defining Like View"""
+
+    post = get_object_or_404(Recipe, id=request.POST.get('recipe_id'))
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    
+    return HttpResponseRedirect(reverse('the_recipe', args=[str(pk)]))
+
+
 class HomeView(ListView):
     model = Recipe
     template_name = "list-view.html"
@@ -56,18 +72,17 @@ class TheRecipeView(DetailView):
         context = super(TheRecipeView, self).get_context_data(*args, **kwargs)
 
         """ Indentify the specific post place"""
-
         place = get_object_or_404(Recipe, id=self.kwargs['pk'])
         number_likes = place.number_likes()
+
+        liked = False
+        if place.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
         context["cat_list"] = cat_list
         context["number_likes"] = number_likes
+        context["liked"] = liked
         return context
-
-
-def RecipeLike(request, pk):
-    post = get_object_or_404(Recipe, id=request.POST.get('recipe_id'))
-    post.likes.add(request.user)
-    return HttpResponseRedirect(reverse('the_recipe', args=[str(pk)]))
 
 
 class CreateRecipeView(CreateView):

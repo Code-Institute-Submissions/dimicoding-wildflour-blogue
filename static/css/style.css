@@ -135,14 +135,14 @@ hr{
 /*______________________________________ Like Heart ___________________________________________________________*/
 
 .btn-like {
-    color: #E84610;
+    color: #DD818E;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #DD818E;
     background: transparent;
     border: none;
 }
