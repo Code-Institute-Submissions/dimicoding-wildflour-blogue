@@ -16,7 +16,7 @@
             <h1>{{recipe.title}}</h1>
             
             <p class="card-text">
-                <small class="text-body-secondary">{{ recipe.created_recipe }} By {{ recipe.author }} </small>
+                <small class="text-body-secondary">{{ recipe.created_recipe }} By {{ recipe.author.first_name }} {{ recipe.author.last_name }} </small>
             </p>
             <p class="card-text">
                 <small class="text-body-secondary"></small>
@@ -51,8 +51,10 @@
 <p>{{ recipe.status }}</p>
 <p>{{ recipe.exerpt }}</p>
 {% if user.is_authenticated %}
-<button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
-<button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
+    {% if user.id == recipe.author.id %}
+        <button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
+        <button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
+    {% endif %}
 {% endif %}
 <p>{{ recipe.likes }}</p>
 
