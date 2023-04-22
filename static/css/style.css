@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&family=Roboto+Mono:wght@300&display=swap');
 
 a {
     text-decoration: unset;
@@ -123,7 +123,14 @@ hr{
     background-color: #F5F5F5;
 }
 
+/*______________________________________ blackboard for categories img__________________________________________*/
 
+.blackboard{
+    background-color: #000;
+    color: #F5F5F5;
+    font-family: 'Roboto Mono';
+    text-transform: uppercase;
+}
 
 
 
