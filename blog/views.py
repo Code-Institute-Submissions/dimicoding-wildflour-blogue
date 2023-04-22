@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from .models import Recipe, Category
 from .forms import RecipeForm, EditForm
 from django.urls import reverse_lazy
@@ -53,8 +54,20 @@ class TheRecipeView(DetailView):
     def get_context_data(self, *args, **kwargs):
         cat_list = Category.objects.all()
         context = super(TheRecipeView, self).get_context_data(*args, **kwargs)
+
+        """ Indentify the specific post place"""
+
+        place = get_object_or_404(Recipe, id=self.kwargs['pk'])
+        number_likes = place.number_likes()
         context["cat_list"] = cat_list
+        context["number_likes"] = number_likes
         return context
+
+
+def RecipeLike(request, pk):
+    post = get_object_or_404(Recipe, id=request.POST.get('recipe_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('the_recipe', args=[str(pk)]))
 
 
 class CreateRecipeView(CreateView):
@@ -80,3 +93,5 @@ class DeleteRecipeView(DeleteView):
     model = Recipe
     template_name = 'delete-recipe.html'
     success_url = reverse_lazy('home')
+
+

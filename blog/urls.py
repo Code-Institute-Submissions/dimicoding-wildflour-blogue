@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
-from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, DeleteRecipeView, CategoryList, CategoryListView
+from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, DeleteRecipeView, CategoryList, CategoryListView, RecipeLike
 
 
 urlpatterns = [
@@ -12,4 +12,5 @@ urlpatterns = [
     path('recipe/<int:pk>/delete', DeleteRecipeView.as_view(), name="delete_recipe"),
     path('categories/', CategoryListView, name="categories"),
     path('category/<str:cat>/', CategoryList, name="category"),
+    path('like/<int:pk>', RecipeLike, name="recipe_like")
 ]

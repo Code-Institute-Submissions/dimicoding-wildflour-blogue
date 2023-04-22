@@ -49,6 +49,9 @@ class Recipe(models.Model):
 
     def get_absolute_url(self):
         return reverse('home')
+    
+    def number_likes(self):
+        return self.likes.count()
         
 
 
