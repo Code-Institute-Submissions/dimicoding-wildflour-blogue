@@ -26,6 +26,7 @@ class HomeView(ListView):
     model = Recipe
     template_name = "list-view.html"
     ordering = ['-created_recipe']
+    paginate_by = 6
 
     # Dropdown menu list 
     def get_context_data(self, *args, **kwargs):
