@@ -26,14 +26,15 @@
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>
+        <a href="{% provider_login_url 'github' %}" class="btn btn-secondary">
+  <i class="fa fa-github fa-fw"></i>
+  <span>Login with GitHub</span>
+</a>
       </form>
     </div>
   </div>
 </div>
 <!-- GitHub button starts here -->
-{% load socialaccount %}
-<a href="{% provider_login_url 'github' %}" class="btn btn-secondary">
-  <i class="fa fa-github fa-fw"></i>
-  <span>Login with GitHub</span>
-</a>
+
+
 {% endblock %}
