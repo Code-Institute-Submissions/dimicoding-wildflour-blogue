@@ -4,8 +4,11 @@ from .models import Recipe, Category
 from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget
 
-categories = Category.objects.all().values_list('title', 'title')
 
+
+
+categories = Category.objects.all().values_list('title', 'title')
+""" Loop trought the created categories"""
 cat_list = []
 for item in categories:
     cat_list.append(item)
