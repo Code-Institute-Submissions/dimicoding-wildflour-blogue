@@ -1,10 +1,14 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Recipe, Category
+from .models import Recipe, Category, Comment
 from cloudinary.models import CloudinaryField
 from django_summernote.widgets import SummernoteWidget
 
 
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)
 
 
 categories = Category.objects.all().values_list('title', 'title')

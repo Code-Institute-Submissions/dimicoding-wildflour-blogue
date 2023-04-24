@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
 from .models import Recipe, Category
-from .forms import RecipeForm, EditForm
+from .forms import RecipeForm, EditForm, CommentForm
 from django.urls import reverse_lazy
 
 
@@ -74,16 +74,38 @@ class TheRecipeView(DetailView):
 
         """ Indentify the specific post place"""
         place = get_object_or_404(Recipe, id=self.kwargs['pk'])
+        comments = place.comments.filter(approved=True).order_by('created_on')
         number_likes = place.number_likes()
 
         liked = False
         if place.likes.filter(id=self.request.user.id).exists():
             liked = True
 
+        if self.request.method == 'POST':
+            comment_form = CommentForm(data=self.request.POST)
+            if comment_form.is_valid():
+                comment_form.instance.email = self.request.user.email
+                comment_form.instance.name = self.request.user.username
+                comment = comment_form.save(commit=False)
+                comment.recipe = place
+                comment.save()
+            else:
+                comment_form = CommentForm()
+        else:
+            comment_form = CommentForm()
+
         context["cat_list"] = cat_list
         context["number_likes"] = number_likes
         context["liked"] = liked
+        context["comments"] = comments
+        context["comment_form"] = comment_form
+        context["commented"] = False
+
+        if comment_form.is_valid():
+            context["commented"] = True
+
         return context
+    
 
 
 class CreateRecipeView(CreateView):
