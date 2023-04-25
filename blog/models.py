@@ -40,7 +40,7 @@ class Recipe(models.Model):
     updated_recipe = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
     featured_image = CloudinaryField("image", default='placeholder')
-    exerpt = models.TextField(blank=True)
+    exerpt = models.TextField(max_length=150, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 

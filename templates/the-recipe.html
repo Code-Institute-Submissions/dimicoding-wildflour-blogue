@@ -64,7 +64,7 @@
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}
                 <div class="">
-                    <strong>{{ comment.post.author.username }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
+                    <strong>{{ recipe.author.username }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
                     <p>{{ comment.body|linebreaks }}</p>
                     <hr>
                 </div>
@@ -81,7 +81,6 @@
                     {% csrf_token %} {{ comment_form.as_p }}
                     <button class="btn btn-success">Submit</button>
                 </form>
-                
             {% endif %}
             {% endif%}
         </div>

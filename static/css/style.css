@@ -146,8 +146,12 @@ hr{
     background: transparent;
     border: none;
 }
-
-
+/*______________________________________ Styling the socialmedia icons ___________________________________________________________*/
+.media a{
+    font-size: 35px;
+    padding: 5%;
+    color: #3a3a3a;
+ }
 
 
 
