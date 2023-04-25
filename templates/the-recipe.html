@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+{% load crispy_forms_tags %}
 
 
 
@@ -63,16 +64,23 @@
     <div class="row">
         <div class="col">
             {% if not recipe.comments.all %}
-                No comments added <a href="#">Add a comment</a>
+            
+                No comments added...
+            
+                <form method="POST">
+                    {% csrf_token %} {{ comment_form.as_p }}
+                    <button class="btn btn-success">Submit</button>
+                </form>
+                
 
             {% else %}
                 {% for comment in recipe.comments.all %}
                     {{ comment.name}}- {{ comment.created_on }}
             <br>
                     {{ comment.body }}
+                    
             {% endfor %}
             {% endif%}
-
         </div>
     </div>
 </div>
@@ -83,14 +91,7 @@
 
 
 
-<div>
-</div>
-<p>{{ recipe.author }}</p>
-<p><a href="{% url 'category' recipe.category %}"></a></p>
-<p>{{ recipe.dificulty }}</p>
-<p>{{ recipe.total_time }}</p>
-<p>{{ recipe.status }}</p>
-<p>{{ recipe.exerpt }}</p>
+
 {% if user.is_authenticated %}
     {% if user.id == recipe.author.id %}
         <button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>

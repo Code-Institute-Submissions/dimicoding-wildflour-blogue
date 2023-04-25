@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, View
-from .models import Recipe, Category
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views import generic, View
+from .models import Recipe, Category, Comment
 from .forms import RecipeForm, EditForm, CommentForm
 from django.urls import reverse_lazy
 
@@ -67,44 +69,34 @@ class TheRecipeView(DetailView):
     model = Recipe
     template_name = "the-recipe.html"
 
-    # Dropdown menu list 
     def get_context_data(self, *args, **kwargs):
-        cat_list = Category.objects.all()
+        cat_list = Category.objects.all() #Dropdown menu list 
         context = super(TheRecipeView, self).get_context_data(*args, **kwargs)
 
         """ Indentify the specific post place"""
         place = get_object_or_404(Recipe, id=self.kwargs['pk'])
-        comments = place.comments.filter(approved=True).order_by('created_on')
         number_likes = place.number_likes()
+
+        comments = Comment.objects.filter(approved=True).order_by('created_on')
+
+        if self.request.user.is_authenticated:
+            context['comment_form'] = CommentForm(instance=self.request.user)
 
         liked = False
         if place.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        if self.request.method == 'POST':
-            comment_form = CommentForm(data=self.request.POST)
-            if comment_form.is_valid():
-                comment_form.instance.email = self.request.user.email
-                comment_form.instance.name = self.request.user.username
-                comment = comment_form.save(commit=False)
-                comment.recipe = place
-                comment.save()
-            else:
-                comment_form = CommentForm()
-        else:
-            comment_form = CommentForm()
-
         context["cat_list"] = cat_list
         context["number_likes"] = number_likes
         context["liked"] = liked
         context["comments"] = comments
-        context["comment_form"] = comment_form
-        context["commented"] = False
-
-        if comment_form.is_valid():
-            context["commented"] = True
-
         return context
+
+    def post(self, request, *args, **kwargs):
+        new_comment = Comment(body=request.POST.get('body'), name=self.request.user, post=self.get_object())
+        new_comment.save()
+        return self.get(self, request, *args, **kwargs)
+
     
 
 

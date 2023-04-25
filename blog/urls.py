@@ -12,5 +12,6 @@ urlpatterns = [
     path('recipe/<int:pk>/delete', DeleteRecipeView.as_view(), name="delete_recipe"),
     path('categories/', CategoryListView, name="categories"),
     path('category/<str:cat>/', CategoryList, name="category"),
-    path('like/<int:pk>', RecipeLike, name="recipe_like")
+    path('like/<int:pk>', RecipeLike, name="recipe_like"),
+    # path('comment/<int:pk>', CreateCommentView, name="comment"),
 ]
