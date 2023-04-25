@@ -22,10 +22,13 @@
                         
                     <p class="card-text">{{ recipe.exerpt }}</p>
 
-                    <p>
-                        <small class="text-body-secondary"><a href="{% url 'category' recipe.category %}">{{ recipe.category }}</a> {{ recipe.dificulty }}
-                            {{recipe.total_time}}</small>
-                    </p>
+                    <div class="px-4 text-center">
+                        <div class="text-body-secondary gx-5">
+                            <a class="p-3" href="{% url 'category' recipe.category %}"><i class="fa-solid fa-wheat-awn-circle-exclamation fa-rotate-180"></i> {{ recipe.category }}</a> 
+                            <a class="p-3"><i class="fa-solid fa-gears"></i> {{ recipe.dificulty }}</a> 
+                            <a class="p-3"><i class="fa-solid fa-hourglass-half"></i> {{recipe.total_time}}min</a> 
+                        </div> 
+                    </div>
                     {% if user.is_authenticated %}
                         {% if user.id == recipe.author.id %}
                             <button class="btn btn-success">
