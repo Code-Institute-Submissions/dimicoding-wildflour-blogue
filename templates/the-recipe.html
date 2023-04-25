@@ -22,9 +22,6 @@
             <p class="card-text">
                 <small class="text-body-secondary">Published: {{ recipe.created_recipe|date:"dS  F Y" }} | By: {{ recipe.author.first_name }} {{ recipe.author.last_name }} </small>
             </p>
-            <p class="card-text">
-                <small class="text-body-secondary"></small>
-            </p>
         </div>
         <div class="col-md-6">
             <img src="{{ recipe.featured_image.url}}" class="card-img-top img-fluid d-none d-md-block"
@@ -60,26 +57,32 @@
 
 
 
-<div class="container text-start">
+<div class="container text-start mt-5">
     <div class="row">
-        <div class="col">
+        <div class="col col-md-6">
+            <h3>Comments:</h3>
+            {% if user.is_authenticated %}
+            {% for comment in recipe.comments.all %}
+                <div class="">
+                    <strong>{{ comment.post.author.username }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
+                    <p>{{ comment.body|linebreaks }}</p>
+                    <hr>
+                </div>
+            {% endfor %}
             {% if not recipe.comments.all %}
-            
-                No comments added...
-            
+                This recipe has no comments, add the first one.
+                <form method="POST">
+                    {% csrf_token %} {{ comment_form.as_p }}
+                    <button class="btn btn-success">Submit</button>
+                </form>
+            {% else %}
+                Add a comment:
                 <form method="POST">
                     {% csrf_token %} {{ comment_form.as_p }}
                     <button class="btn btn-success">Submit</button>
                 </form>
                 
-
-            {% else %}
-                {% for comment in recipe.comments.all %}
-                    {{ comment.name}}- {{ comment.created_on }}
-            <br>
-                    {{ comment.body }}
-                    
-            {% endfor %}
+            {% endif %}
             {% endif%}
         </div>
     </div>

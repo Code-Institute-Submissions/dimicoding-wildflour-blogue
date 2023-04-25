@@ -97,8 +97,6 @@ class TheRecipeView(DetailView):
         new_comment.save()
         return self.get(self, request, *args, **kwargs)
 
-    
-
 
 class CreateRecipeView(CreateView):
     model = Recipe
