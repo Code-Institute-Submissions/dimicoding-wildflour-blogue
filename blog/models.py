@@ -39,6 +39,8 @@ class Recipe(models.Model):
     created_recipe = models.DateTimeField(auto_now_add=True)
     updated_recipe = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
+    ingredients = models.TextField(blank=True)
+    instructions = models.TextField(blank=True)
     featured_image = CloudinaryField("image", default='placeholder')
     exerpt = models.TextField(max_length=150, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
