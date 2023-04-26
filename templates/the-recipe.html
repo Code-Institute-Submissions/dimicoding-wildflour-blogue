@@ -22,6 +22,35 @@
             <p class="card-text">
                 <small class="text-body-secondary">Published: {{ recipe.created_recipe|date:"dS  F Y" }} | By: {{ recipe.author.first_name }} {{ recipe.author.last_name }} </small>
             </p>
+            <div class="d-flex justify-content-center mt-5">
+                <div class="row gx-5">
+                    <!-- Display likes -->
+                    <strong class="likes-container">
+                        {% if user.is_authenticated %}
+                        <form class="d-inline" action="{% url 'recipe_like' recipe.pk %}" method="POST">
+                             {% csrf_token %}
+                             {% if liked %}
+                             <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="fas fa-heart"></i></button>
+                             {% else %}
+                             <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="far fa-heart"></i></button>
+                             {% endif %}
+                        </form>
+                        {% else %}
+                        <span class="text-secondary"><a href="{% url 'account_login' %}"><i class="far fa-heart"></i></a></span>
+                        {% endif %}
+                        <span class="text-secondary">{{ number_likes }} Likes</span>
+                    </strong>
+                    
+                </div>
+                <div>
+                    <!-- Display comments -->
+                    {% with recipe.comments.count as total_comments %}
+                        <strong class="text-secondary pl-3">
+                            <span><i class="far fa-comments"></i> {{ total_comments }} Comments</span>
+                        </strong>
+                    {% endwith %}
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
             <img src="{{ recipe.featured_image.url}}" class="card-img-top img-fluid d-none d-md-block"
@@ -30,30 +59,19 @@
     </div>
 </div>
 <hr>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div>{{ recipe.content|safe }}</div>
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-6">
+            <h3>{{recipe.title}}</h3>
+            <p class="mt-3">{{ recipe.content|safe }}</p>
+            <hr>
+            <p>{{ recipe.ingredients|safe }}</p>
+            <hr>
+            <p>{{ recipe.instructions|safe }}</p>
+
         </div>
     </div>
 </div>
-
-<strong>
-    {% if user.is_authenticated %}
-    <form class="d-inline" action="{% url 'recipe_like' recipe.pk %}" method="POST">
-         {% csrf_token %}
-         {% if liked %}
-         <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="fas fa-heart"></i></button>
-         {% else %}
-         <button type="submit" name="recipe_id" value="{{ recipe.id }}" class="btn-like"><i class="far fa-heart"></i></button>
-         {% endif %}
-    </form>
-    {% else %}
-    <span class="text-secondary"><a href="{% url 'account_login' %}"><i class="far fa-heart"></i></a></span>
-    {% endif %}
-    <span class="text-secondary">{{ number_likes }} Likes</span>
-</strong>
-
 
 
 
@@ -61,13 +79,13 @@
     <div class="row">
         <div class="col col-md-6">
 
-            {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}
+            {% with recipe.comments.count as total_comments %}
+                        <strong class="text-secondary">
+                            <h3>Comments:<i class="far fa-comments"></i>{{ total_comments }}</h3>
                         </strong>
             {% endwith %}
 
-            <h3>Comments:</h3>
+            
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}
                 <div class="">

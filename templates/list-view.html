@@ -19,7 +19,10 @@
                             By: {{ recipe.author|truncatechars:15 }} |
                             <!-- Add likes -->
                             <span class="btn-like"><i class="fas fa-heart "></i></span>
-                            <span class="text-secondary">{{ recipe.number_likes }} Likes </span>
+                            <span class="text-secondary">{{ recipe.number_likes }} Likes |</span>
+                        
+                        {% with recipe.comments.count as total_comments %}
+                            <i class="far fa-comments"></i>{{ total_comments }}{% endwith %}
                         </small>
                     </p>
                     <h5 class="card-title text-center">
@@ -48,7 +51,7 @@
         {% endif %}
         {% if page_obj.has_next %}
         <li><a href="?page={{ page_obj.next_page_number }}" 
-            class="fa-solid fa-angles-right"> Next Page&raquo;</a></li>
+            class="fa-solid fa-angles-right"> More&raquo;</a></li>
 
         {% endif %}
     </ul>

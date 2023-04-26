@@ -51,9 +51,11 @@ class RecipeForm(forms.ModelForm):
             'content': SummernoteWidget(),
             'ingredients': SummernoteWidget(attrs={'summernote': {'toolbar': [
                 ['para', ['ul', 'paragraph']],
+                ['font', ['bold', 'italic', 'underline']],
                 ['insert', ['picture']]]}}),
             'instructions': SummernoteWidget(attrs={'summernote': {'toolbar': [
                 ['para', ['ol', 'paragraph']],
+                ['font', ['bold', 'italic', 'underline']],
                 ['insert', ['picture']]]}}),
             'exerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '"Share a sneak peek of this delicious recipe! Write a short and catchy excerpt that will make others want to try it out."'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
@@ -87,9 +89,11 @@ class EditForm(forms.ModelForm):
             'content': SummernoteWidget(),
             'ingredients': SummernoteWidget(attrs={'summernote': {'toolbar': [
                 ['para', ['ul', 'paragraph']],
+                ['font', ['bold', 'italic', 'underline']],
                 ['insert', ['picture']]]}}),
             'instructions': SummernoteWidget(attrs={'summernote': {'toolbar': [
                 ['para', ['ol', 'paragraph']],
+                ['font', ['bold', 'italic', 'underline']],
                 ['insert', ['picture']]]}}),
             'exerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '"Share a sneak peek of this delicious recipe! Write a short and catchy excerpt that will make others want to try it out."'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
