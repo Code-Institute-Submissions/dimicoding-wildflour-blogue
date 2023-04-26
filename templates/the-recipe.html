@@ -60,6 +60,13 @@
 <div class="container text-start mt-5">
     <div class="row">
         <div class="col col-md-6">
+
+            {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                            {{ total_comments }}
+                        </strong>
+            {% endwith %}
+
             <h3>Comments:</h3>
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}

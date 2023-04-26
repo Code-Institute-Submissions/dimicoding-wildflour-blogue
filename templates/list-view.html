@@ -14,13 +14,20 @@
                 </a>
                 <div class="card-body">
                     <p class="card-text">
-                        <small class="text-body-secondary">Published: {{ recipe.created_recipe|date:"dS  F Y" }} | By: {{ recipe.author }} </small>
+                        <small class="text-body-secondary justify-content-center">
+                            Published: {{ recipe.created_recipe|date:"dS  F Y" }} | 
+                            By: {{ recipe.author|truncatechars:15 }} |
+                            <!-- Add likes -->
+                            <span class="btn-like"><i class="fas fa-heart "></i></span>
+                            <span class="text-secondary">{{ recipe.number_likes }} Likes </span>
+                        </small>
                     </p>
                     <h5 class="card-title text-center">
                         <a href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>
                     </h5>
                     <p class="card-text">{{ recipe.exerpt }}</p>
                 </div>
+                <!-- Details about the recipe -->
                 <div class="card-body text-body-secondary d-flex d-flex justify-content-evenly details">
                     <p class=""><i class="fa-solid fa-wheat-awn-circle-exclamation fa-rotate-180"></i>{{ recipe.category}}</p>
                     <p class=""><i class="fa-solid fa-gears"></i> {{ recipe.dificulty }}</p>
