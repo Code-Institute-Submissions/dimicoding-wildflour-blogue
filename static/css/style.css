@@ -153,7 +153,13 @@ hr{
     color: #3a3a3a;
  }
 
+.details{
+    font-size: 13px;
+}
 
+.card{
+    border: none;
+}
 
 
 

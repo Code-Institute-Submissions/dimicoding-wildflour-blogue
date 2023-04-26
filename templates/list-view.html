@@ -13,29 +13,18 @@
                                         alt=" ...">
                 </a>
                 <div class="card-body">
-                    <h5 class="card-title text-center">
-                        <a href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>
-                    </h5>
                     <p class="card-text">
                         <small class="text-body-secondary">Published: {{ recipe.created_recipe|date:"dS  F Y" }} | By: {{ recipe.author }} </small>
                     </p>
-                        
+                    <h5 class="card-title text-center">
+                        <a href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>
+                    </h5>
                     <p class="card-text">{{ recipe.exerpt }}</p>
-
-                    <div class="px-4 text-center">
-                        <div class="text-body-secondary gx-5">
-                            <a class="p-3" href="{% url 'category' recipe.category %}"><i class="fa-solid fa-wheat-awn-circle-exclamation fa-rotate-180"></i> {{ recipe.category }}</a> 
-                            <a class="p-3"><i class="fa-solid fa-gears"></i> {{ recipe.dificulty }}</a> 
-                            <a class="p-3"><i class="fa-solid fa-hourglass-half"></i> {{recipe.total_time}}min</a> 
-                        </div> 
-                    </div>
-                    {% if user.is_authenticated %}
-                        {% if user.id == recipe.author.id %}
-                            <button class="btn btn-success">
-                                <a href="{% url 'edit_recipe' recipe.pk %}">My Recipe</a>
-                            </button>
-                        {% endif %}
-                    {% endif %}
+                </div>
+                <div class="card-body text-body-secondary d-flex d-flex justify-content-evenly details">
+                    <p class=""><i class="fa-solid fa-wheat-awn-circle-exclamation fa-rotate-180"></i>{{ recipe.category}}</p>
+                    <p class=""><i class="fa-solid fa-gears"></i> {{ recipe.dificulty }}</p>
+                    <p class=""><i class="fa-solid fa-hourglass-half"></i> {{recipe.total_time}}min</p>
                 </div>
             </div>
         </div>
@@ -52,7 +41,7 @@
         {% endif %}
         {% if page_obj.has_next %}
         <li><a href="?page={{ page_obj.next_page_number }}" 
-            class="fa-solid fa-angles-right"> Next &raquo;</a></li>
+            class="fa-solid fa-angles-right"> Next Page&raquo;</a></li>
 
         {% endif %}
     </ul>
