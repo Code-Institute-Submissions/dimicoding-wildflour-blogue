@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
-from .views import User
+from .views import UserUpdateView
 
 urlpatterns = [
 
-    path('user/', User.as_view(), name="see_user"),
+    path('user/', UserUpdateView.as_view(), name="see_user"),
 ]
