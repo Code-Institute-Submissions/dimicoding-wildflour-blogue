@@ -5,7 +5,8 @@ from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, De
 
 
 urlpatterns = [
-    path('', HomeView.as_view(), name="home"),
+    path('', views.index, name="index"),
+    path('blog/', HomeView.as_view(), name="home"),
     path('recipe/<int:pk>', TheRecipeView.as_view(), name="the_recipe"),
     path('create/', CreateRecipeView.as_view(), name="create_recipe"),
     path('recipe/edit/<int:pk>', EditRecipeView.as_view(), name="edit_recipe"),

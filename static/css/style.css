@@ -146,7 +146,7 @@ hr{
     background: transparent;
     border: none;
 }
-/*______________________________________ Styling the socialmedia icons ___________________________________________________________*/
+__________*/
 .media a{
     font-size: 35px;
     padding: 5%;
@@ -165,9 +165,28 @@ hr{
     margin-right: 25px;
  }
  
+/*______________________________________ Stylish Buttons _____________________________________________*/
 
-
-
+.neu-button {
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+    color: #4d4d4d;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 11px 30px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid rgb(206, 206, 206);
+  }
+  
+  .neu-button:hover {
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  }
+  
+  .neu-button:focus {
+    outline: none;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+  }
 
 
 

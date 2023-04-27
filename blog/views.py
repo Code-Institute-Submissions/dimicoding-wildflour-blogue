@@ -8,6 +8,21 @@ from .forms import RecipeForm, EditForm, CommentForm
 from django.urls import reverse_lazy
 
 
+def index(request):
+    """Display the index page"""
+    
+    # Dropdown menu list 
+    cat_list = Category.objects.all()
+
+    return render(
+        request,
+        "index.html",
+        {
+            "cat_list": cat_list
+        }
+    )
+
+
 def RecipeLike(request, pk):
 
     """Defining Like View"""
