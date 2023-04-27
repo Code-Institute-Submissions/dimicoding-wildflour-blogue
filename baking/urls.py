@@ -22,6 +22,7 @@ import django_summernote
 
 urlpatterns = [
     path('', include('blog.urls'), name='blog_urls'),
+    path('user/', include('users.urls'), name='user_urls'),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),

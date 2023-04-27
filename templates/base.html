@@ -79,6 +79,10 @@
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'see_user' %}"><i class=""></i>
+                            User</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-door-open"></i>
                             Logout</a>
                     </li>
