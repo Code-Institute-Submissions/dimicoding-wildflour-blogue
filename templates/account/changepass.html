@@ -1,20 +1,17 @@
 {% extends "base.html" %}
-
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}Change Password{% endblock %}
 
 {% block content %}
 
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+      <h1>Change Password</h1>
 
-      <p>{% blocktrans %}Welcome back to the Wildflour blog. To leave a comment or like a post, please log in. If you
-        have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-        first.{% endblocktrans %}</p>
+      <p>Follow the next steps to change your password</p>
     </div>
   </div>
   <div class="row ">
@@ -25,7 +22,7 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-success" type="submit">Change</button>
         <a href="{% provider_login_url 'github' %}" class="btn btn-secondary">
   <i class="fa fa-github fa-fw"></i>
   <!-- GitHub button starts here -->
