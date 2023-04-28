@@ -13,14 +13,24 @@ def index(request):
     
     # Dropdown menu list 
     cat_list = Category.objects.all()
+    cat_list_view = Category.objects.all().values('title', 'image')
 
     return render(
         request,
         "index.html",
         {
-            "cat_list": cat_list
+            "cat_list": cat_list,
+            "cat_list_view": cat_list_view
         }
     )
+
+
+def contact(request):
+    return render(request, "contact.html", {})
+
+
+def about(request):
+    return render(request, "about.html", {})
 
 
 def RecipeLike(request, pk):

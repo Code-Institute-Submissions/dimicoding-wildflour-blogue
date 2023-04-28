@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 from django.contrib.auth import views as auth_views
 from .views import HomeView, TheRecipeView, CreateRecipeView, EditRecipeView, DeleteRecipeView, CategoryList, CategoryListView, RecipeLike
@@ -14,5 +16,9 @@ urlpatterns = [
     path('categories/', CategoryListView, name="categories"),
     path('category/<str:cat>/', CategoryList, name="category"),
     path('like/<int:pk>', RecipeLike, name="recipe_like"),
-    # path('comment/<int:pk>', CreateCommentView, name="comment"),
+    path('contact/', views.contact, name="contact"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)

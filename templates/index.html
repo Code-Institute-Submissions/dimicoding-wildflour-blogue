@@ -7,94 +7,47 @@
     <main class="content mt-5">
         <article>
             <section class="top-margin">
-                <div class="container text-center">
+                <div class="container-fluid text-center">
                     <div class="row">
                         <div class="col-4 col-md-4 align-self-center">
                             <h2>Get Inspired...</h2>
                             <button class="neu-button">Recipes</button>
                         </div>
                         <div class="col-8 col-md-8">
-                            <img class="img-fluid"
-                                src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png" alt="">
+                            <img class="card-img-top rounded" width="500" height="650" style="object-fit:cover; object-position: center;"
+                                src="https://res.cloudinary.com/dff71pxfw/image/upload/v1682688319/IMG_7304_ff8ea7.jpg" alt="">
                         </div>
                     </div>
+                </div>
             </section>
-            <section class="top-margin">
+
+            <div class="top-margin">
                 <div class="container text-center">
                     <div class="row justify-content-center">
                         <div class="col col-md-4 mt-5">
                             <h2>Categories:</h2>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-auto col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Vegan</h3>
+                </div>
+                <div class="container-fluid text-center">
+                    <div class="row row-cols-2 row-cols-md-3 h-100 ">
+                        {% for category in cat_list_view %}
+                        <div class="col mt-3 col-md-4">
+                            <a href="{% url 'category' category.title %}">
+                                <div class="position-relative h-100">
+                                    <img class="img-fluid rounded h-100"
+                                        src="{{ category.image.url }}" alt="">
+                                    <h3 class="position-absolute top-50 start-50 translate-middle blackboard">{{ category.title }}</h3>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-6 col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Chocolate Recipes
-                                    </h3>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Fruits</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-auto col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Gluten Free</h3>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Birthday & Wedding
-                                    </h3>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-2 mt-3">
-                            <a href="#">
-                                <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
-                                        alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Christmas Recipes
-                                    </h3>
-                                </div>
-                            </a>
-                        </div>
+                        {% endfor%}
                     </div>
                 </div>
-            </section>
+            </div>
+            
 
-            <section class="top-margin">
+            <div class="top-margin">
                 <div class="container text-center">
                     <div class="row">
                         <div class="col-12">
@@ -111,7 +64,7 @@
                             </a>
                         </div>
                     </div>
-            </section>
+                </div>
             <section class="top-margin">
                 <div class="container text-center">
                     <div class="row align-self-center">

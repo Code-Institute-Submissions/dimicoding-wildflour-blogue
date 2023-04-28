@@ -6,6 +6,9 @@
 <section class="container-fluid">
     <div class="row bg-color-contact">
         <div class="col">
+            <div class="alert alert-success" id="success-message" style="display: none;" role="alert">
+                Your message has been sent successfully!</div>
+
             <h3 class="contact-heading uppercase text-center">Got a question in your mind?</h3>
             <h5 class="uppercase text-center">Let's us help you!</h5>
 
@@ -15,11 +18,11 @@
                     <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                         required>
                     <textarea name="projectsummary" id="projectsummary" rows="5" class="form-control"
-                        placeholder="Project description" required></textarea>
+                        placeholder="How can we help you?" required></textarea>
 
                     <div class="form-row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-secondary">Send Project Request</button>
+                            <button type="submit" onclick="sendMail()" class="btn btn-secondary">Send</button>
                         </div>
                     </div>
                 </form>
