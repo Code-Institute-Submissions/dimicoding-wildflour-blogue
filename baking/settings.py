@@ -15,9 +15,6 @@ import cloudinary_storage
 import os
 import dj_database_url
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
-
 if os.path.isfile("env.py"):
     import env
 
@@ -35,9 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "baking.herokuapp.com"]
+ALLOWED_HOSTS = ["baking.herokuapp.com", "localhost"]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
