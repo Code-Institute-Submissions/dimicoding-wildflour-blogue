@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap');
+
 
 a {
     text-decoration: unset;
@@ -128,7 +129,7 @@ hr{
 .blackboard{
     background-color: #000;
     color: #F5F5F5;
-    font-family: 'Roboto Mono';
+    font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
 }
 
@@ -188,62 +189,14 @@ __________*/
     box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ .justify{
+    text-align: justify;
+ }
+ .about-photo{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+ }
 
 
 
