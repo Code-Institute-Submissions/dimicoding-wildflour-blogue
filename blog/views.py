@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
+from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views import generic, View
 from .models import Recipe, Category, Comment
-from .forms import RecipeForm, EditForm, CommentForm
+from .forms import RecipeForm, EditForm, CommentForm, ContactForm
 from django.urls import reverse_lazy
 
 
@@ -26,7 +27,27 @@ def index(request):
 
 
 def contact(request):
-    return render(request, "contact.html", {})
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            subject = 'Client Contant Form'
+            body = f'Name:{name}\nEmail:{email}\n\nMessage:\n{message}'
+
+            send_mail(
+                subject,
+                body,
+                email,
+                ['dimo4ka1@hotmail.com'],
+                fail_silently=False,
+            )
+            return render(request, "contact.html", {'name': name})
+    else:
+        form = ContactForm()
+    return render(request, "contact.html", {'form': form})
 
 
 def about(request):

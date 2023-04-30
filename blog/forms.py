@@ -98,3 +98,9 @@ class EditForm(forms.ModelForm):
             'exerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '"Share a sneak peek of this delicious recipe! Write a short and catchy excerpt that will make others want to try it out."'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
         }
+
+
+class ContactForm(forms.Form):
+    name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
+    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
+    message = forms.CharField(required=True, widget=forms.Textarea(attrs={'class':'form-control'}))
