@@ -17,6 +17,7 @@ urlpatterns = [
     path('category/<str:cat>/', CategoryList, name="category"),
     path('like/<int:pk>', RecipeLike, name="recipe_like"),
     path('contact/', views.contact, name="contact"),
+    path('about/', views.about, name="about"),
 ]
 
 if settings.DEBUG:
