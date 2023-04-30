@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&family=Roboto+Condensed&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia&family=Licorice&Montserrat:wght@100&family=Roboto+Condensed&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;700&display=swap');
 
 
 a {
@@ -194,8 +194,17 @@ __________*/
  }
  .about-photo{
     border-radius: 50%;
-    width: 200px;
+    width: 220px;
     height: 200px;
+ }
+ .title-one{
+    font-family: 'Playfair Display', serif;
+    font-weight:400;
+ }
+ .title-one-d{
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 25px;
  }
 
 
