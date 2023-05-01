@@ -91,7 +91,7 @@
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}
                 <div class="mt-5">
-                    <strong>{{ recipe.author.username }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
+                    <strong>{{ comment.name }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
                     <p>{{ comment.body|linebreaks }}</p>
                     <hr>
                 </div>

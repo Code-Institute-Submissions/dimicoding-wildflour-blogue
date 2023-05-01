@@ -8,10 +8,10 @@ from django_summernote.widgets import SummernoteWidget
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name','body',)
+        fields = ('body',)
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'body': forms.Textarea(attrs={'class': 'form-control'}),
+            # 'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder':'"We would love to hear your thoughts and more about your experience with this recipe..."'}),
         }
 
 
