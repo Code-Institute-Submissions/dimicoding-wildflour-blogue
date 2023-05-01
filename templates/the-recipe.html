@@ -83,7 +83,7 @@
             
             {% with recipe.comments.count as total_comments %}
                         <strong class="text-secondary">
-                            <h3 id="comment"><i class="far fa-comments"></i>{{ total_comments }} Comments:</h3>
+                            <h3 class="title-one" id="comment"><i class="far fa-comments"></i><a href="#comment">{{ total_comments }} Comments:</a></h3>
                         </strong>
             {% endwith %}
 

@@ -88,12 +88,15 @@ def CategoryListView(request):
     """
     Displays a page with all categories in the blog 
     """
+    # Dropdown menu list 
+    cat_list = Category.objects.all()
     cat_list_view = Category.objects.all().values('title', 'image')
     return render(
         request,
         'categories-page.html',
         {
             "cat_list_view": cat_list_view,
+            "cat_list": cat_list
         })
 
 
@@ -101,6 +104,9 @@ def CategoryList(request, cat):
     """
     Displays the categories page
     """
+    # Dropdown menu list 
+    cat_list = Category.objects.all()
+    cat_list_view = Category.objects.all().values('title', 'image')
     recipe_category = Recipe.objects.filter(category=cat.replace('-', ' '))
     return render(
         request,
@@ -108,6 +114,8 @@ def CategoryList(request, cat):
         {
             "cat": cat.title().replace('-', ' '),
             "recipe_category": recipe_category,
+            "cat_list_view": cat_list_view,
+            "cat_list": cat_list
         })
 
 

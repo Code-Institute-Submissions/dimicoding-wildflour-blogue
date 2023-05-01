@@ -56,9 +56,6 @@ header{
     padding-top: 15px;
 }
 
-body {
-    height: 2000px;
-}
 .sm-circle{
     height: 100px;
     width: 100px;
@@ -98,10 +95,10 @@ hr{
     align-items: center;
     width: 100%;
     z-index: 1;
-    transition: 1s;
+    transition: 1.5s;
 }
 .sticky + .content {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 .navbar {
     z-index: 2;
@@ -194,7 +191,7 @@ __________*/
  }
  .about-photo{
     border-radius: 50%;
-    width: 220px;
+    width: 210px;
     height: 200px;
  }
  .title-one{
