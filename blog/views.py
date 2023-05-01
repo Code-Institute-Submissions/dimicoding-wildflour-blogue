@@ -71,10 +71,13 @@ def RecipeLike(request, pk):
 
 
 class HomeView(ListView):
+    """
+    Accessible from "blog" navbar, displays all recipes
+    """
     model = Recipe
     template_name = "list-view.html"
     ordering = ['-created_recipe']
-    paginate_by = 6
+    paginate_by = 8
 
     # Dropdown menu list 
     def get_context_data(self, *args, **kwargs):
@@ -86,7 +89,7 @@ class HomeView(ListView):
 
 def CategoryListView(request):
     """
-    Displays a page with all categories in the blog 
+    Displays a page with all categories of the blog 
     """
     # Dropdown menu list 
     cat_list = Category.objects.all()
@@ -102,12 +105,12 @@ def CategoryListView(request):
 
 def CategoryList(request, cat):
     """
-    Displays the categories page
+    Displays the page with recipes of the specific Category
     """
     # Dropdown menu list 
     cat_list = Category.objects.all()
     cat_list_view = Category.objects.all().values('title', 'image')
-    recipe_category = Recipe.objects.filter(category=cat.replace('-', ' '))
+    recipe_category = Recipe.objects.filter(category=cat.replace('-', ' ')).order_by('-created_recipe')
     return render(
         request,
         'category.html',

@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container ">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 mt-5">
+            <h1 class="title-one-d " >Edit Profile</h1>
+            <h5 class="title-one">Time Active: {{ user.last_login | timesince }}</h5>
+            <h5 class="title-one">You joined our site on {{ user.date_joined|date:"F j, Y" }}.</h5>
 
-<h1>Edit Profile</h1>
-<h3>Time Logged: {{ user.last_login | timesince }}</h3>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="form-group">
-                    <form method="POST">
-                        {% csrf_token %} {{ form.as_p}}
-                        <button class="btn btn-success">Update</button>
-                    </form>
-                </div>
+        </div>
+
+        <div class="col-md-4 col-lg-4 mt-5">
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %} {{ form.as_p}}
+                    <button class="btn btn-success">Update</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 {% endblock content %}

@@ -7,7 +7,7 @@
     <main class="content mt-5">
         <article>
             <section class="top-margin">
-                <div class="container-fluid text-center">
+                <div class="container text-center">
                     <div class="row">
                         <div class="col-4 col-md-4 align-self-center">
                             <h2>Get Inspired...</h2>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid text-center">
+                <div class="container text-center">
                     <div class="row row-cols-2 row-cols-md-4 h-100 ">
                         {% for category in cat_list_view %}
                         <div class="col mt-3 col-md-3">
@@ -50,27 +50,28 @@
             <div class="top-margin">
                 <div class="container text-center">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col">
                             <a href="#">
                                 <div class="position-relative">
-                                    <img class="img-fluid"
-                                        src="https://about.canva.com/wp-content/uploads/sites/8/2019/03/gray.png"
+                                    <img class="img-fluid rounded"
+                                        src="https://res.cloudinary.com/dff71pxfw/image/upload/v1682969562/IMG_9142_xylldc.jpg"
                                         alt="">
-                                    <h3 class="position-absolute top-50 start-50 translate-middle">Create your Recipes
+                                    <h3 class="blackboard position-absolute top-50 start-50 translate-middle">Create your Recipes
                                     </h3>
                                     <button type="button"
-                                        class="neu-button position-absolute top-70 start-50 translate-middle">Begin</button>
+                                        class="title-one-d neu-button position-absolute top-70 start-50 translate-middle">Begin</button>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
             <section class="top-margin">
-                <div class="container text-center">
+                <div class="container text-center mt-5">
                     <div class="row align-self-center">
                         <div class="col">
-                            <h3>What can we do for you?</h3>
-                            <button type="button" class="btn btn-outline-dark">Contact</button>
+                            <h3 class="title-one-d" >What can we do for you?</h3>
+                            <h5 class="title-one">Send us a message!</h5>
+                            <button type="button" class="btn btn-outline-dark mt-3"><a href="{% url 'contact' %}">Contact</a></button>
                         </div>
                     </div>
                 </div>

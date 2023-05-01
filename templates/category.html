@@ -3,41 +3,46 @@
 {% block content %}
  
 <div class="container">
-    <div class="row text-center">
-        <div class="col mt-3">
+    <div class="row text-center mt-5">
+        <div class="col">
             <h1 class="title-one-d">Category</h1>
             <h4 class="text-secondary title-one">{{ cat }}</h4>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-3">
     <div class="row row-cols-1 row-cols-md-2 g-4">
         {% for recipe in recipe_category %}
-        <div class="col mt-5 mb-4 content">
+        <div class="col mb-4 content">
             <div class="card h-100">
-                <img src="{{ recipe.featured_image.url }}" class="card-img-top" width="500" height="500" style="object-fit:cover; object-position: bottom;"
-                alt="...">
+                <a href="{% url 'the_recipe' recipe.pk %}">
+                    <img src="{{ recipe.featured_image.url}}" class="card-img-top rounded" width="500" height="500" style="object-fit:cover; object-position: bottom;
+                                        alt=" ...">
+                </a>
                 <div class="card-body">
-                    <h5 class="card-title text-center">
-                        <a href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>
-                    </h5>
                     <p class="card-text">
-                        <small class="text-body-secondary">{{ recipe.author }}</small>
+                        <small class="text-body-secondary justify-content-center">
+                            Published: {{ recipe.created_recipe|date:"dS  F Y" }} | 
+                            By: {{ recipe.author|truncatechars:15 }} |
+                            <!-- Add likes -->
+                            <span class="btn-like"><i class="fas fa-heart "></i></span>
+                            <span class="text-secondary">{{ recipe.number_likes }} Likes |</span>
+                        
+                        {% with recipe.comments.count as total_comments %}
+                            <i class="far fa-comments"></i>{{ total_comments }}{% endwith %}
+                        </small>
                     </p>
-                    <p class="card-text">
-                        <small class="text-body-secondary">{{ recipe.created_recipe }}</small>
-                    </p>
+                    <h2 class="card-title text-center">
+                        <a class="title-one-d" href="{% url 'the_recipe' recipe.pk %}">{{ recipe.title }}</a>
+                    </h2>
                     <p class="card-text">{{ recipe.exerpt }}</p>
-                    <p class="card-text">
-                        <small class="text-body-secondary"><a href="{% url 'category' recipe.category %}">{{ recipe.category }}</a> {{ recipe.dificulty }}
-                            {{recipe.total_time}}</small>
-                    </p>
-                    {% if user.is_authenticated %}
-                    <button class="btn btn-success">
-                        <a href="#">Edit</a>
-                    </button>
-                    {% endif %}
+                </div>
+                <!-- Details about the recipe -->
+                <div class="card-body text-body-secondary d-flex d-flex justify-content-evenly details">
+                    <p class=""><i class="fa-solid fa-wheat-awn-circle-exclamation fa-rotate-180"></i>{{ recipe.category}}</p>
+                    <p class=""><i class="fa-solid fa-gears"></i> {{ recipe.dificulty }}</p>
+                    <p class=""><i class="fa-solid fa-hourglass-half"></i> {{recipe.total_time}}min</p>
                 </div>
             </div>
         </div>
