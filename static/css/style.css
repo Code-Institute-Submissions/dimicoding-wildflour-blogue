@@ -96,7 +96,8 @@ hr{
     width: 100%;
     z-index: 1;
     transition: 1.5s;
-}
+}    
+
 .sticky + .content {
     padding-top: 80px;
 }
@@ -202,6 +203,16 @@ __________*/
     font-family: 'Playfair Display', serif;
     font-weight: 700;
  }
+
+ .footer-blend{
+    background: -moz-linear-gradient(top, #F5F5F5 0%, #F3ECED 100%);
+    background: -webkit-linear-gradient(top, #F5F5F5 0%, #F3ECED 100%);
+    background: linear-gradient(to bottom, #F5F5F5 0%, #F3ECED 100%);
+ }
+
+ .bottom {
+    padding-bottom: 80px;
+}
 
 
 
