@@ -30,7 +30,6 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title',
-                  'slug',
                   'author',
                   'category',
                   'dificulty',
@@ -43,7 +42,6 @@ class RecipeForm(forms.ModelForm):
                   'status']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id': 'user', 'type':'hidden'}),
             'category': forms.Select(choices=cat_list, attrs={'class': 'form-control'}),
             'dificulty': forms.Select(attrs={'class': 'form-control'}),
@@ -69,7 +67,6 @@ class EditForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['title',
-                  'slug',
                   'category',
                   'dificulty',
                   'total_time',
@@ -82,7 +79,6 @@ class EditForm(forms.ModelForm):
 
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'slug': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(choices=cat_list, attrs={'class': 'form-control'}),
             'dificulty': forms.Select(attrs={'class': 'form-control'}),
             'total_time': forms.NumberInput(attrs={'class': 'form-control'}),

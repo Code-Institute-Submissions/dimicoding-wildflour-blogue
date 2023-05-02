@@ -31,7 +31,6 @@ class Category(models.Model):
 class Recipe(models.Model):
 
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(max_length=255, default="all")
     dificulty = models.CharField(max_length=10, choices=DIFICULTY, default='Easy')

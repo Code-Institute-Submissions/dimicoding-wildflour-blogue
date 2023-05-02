@@ -10,8 +10,8 @@ class RecipeAdmin(SummernoteModelAdmin):
     """
     Add fields for Recipe post in admin panel
     """
-    prepopulated_fields = {'slug': ('title',)}
-    list_display = ('title', 'slug', 'status',)
+    # prepopulated_fields = {'slug': ('title',)}
+    list_display = ('title', 'status',)
     search_fields = ['title', 'content']
     summernote_fields = ('content')
 
