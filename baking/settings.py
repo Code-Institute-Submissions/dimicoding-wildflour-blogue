@@ -15,7 +15,6 @@ import cloudinary_storage
 import os
 import dj_database_url
 from dotenv import load_dotenv
-from django.contrib import messages
 
 
 if os.path.isfile("env.py"):

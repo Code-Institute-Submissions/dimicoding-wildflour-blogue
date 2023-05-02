@@ -213,6 +213,19 @@ __________*/
  .bottom {
     padding-bottom: 80px;
 }
+.alert-success {
+    --bs-alert-bg: #EDF3EC;
+    --bs-alert-border-color: #EDF3EC;
+}
+.btn-success {
+    font-family: 'Playfair Display', serif;
+    --bs-btn-color: #000;
+    --bs-btn-bg: #EDF3EC;
+    --bs-btn-border-color: #EDF3EC;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #799974;
+    --bs-btn-hover-border-color: #799974;
+}
 
 
 
