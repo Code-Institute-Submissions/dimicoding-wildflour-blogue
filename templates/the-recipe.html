@@ -4,7 +4,23 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            {% if messages %}
+            <!-- Alert message after user comments -->
+                <div class="alert alert-success alert-dismissible fade show" id="comment" role="alert">
+                    {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    {{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 
 <div class="container-fluid text-center">
@@ -86,7 +102,6 @@
                             <h3 class="title-one" id="comment"><i class="far fa-comments"></i><a href="#comment">{{ total_comments }} Comments:</a></h3>
                         </strong>
             {% endwith %}
-
             
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}
@@ -127,6 +142,15 @@
         <button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
     {% endif %}
 {% endif %}
+
+<script>
+    setTimeout(function() {
+        let messages = document.getElementById("comment");
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 5000);
+</script>
+
 
 
 {% endblock content %}

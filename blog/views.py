@@ -7,6 +7,7 @@ from django.views import generic, View
 from .models import Recipe, Category, Comment
 from .forms import RecipeForm, EditForm, CommentForm, ContactForm
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 
 def index(request):
@@ -152,6 +153,7 @@ class TheRecipeView(DetailView):
     def post(self, request, *args, **kwargs):
         new_comment = Comment(body=request.POST.get('body'), name=self.request.user, post=self.get_object())
         new_comment.save()
+        messages.success(request, 'Your comment was successfully submitted! Awaiting approval.')
         return self.get(self, request, *args, **kwargs)
 
 

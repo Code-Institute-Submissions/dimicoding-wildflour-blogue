@@ -15,6 +15,7 @@ import cloudinary_storage
 import os
 import dj_database_url
 from dotenv import load_dotenv
+from django.contrib import messages
 
 
 if os.path.isfile("env.py"):
@@ -75,7 +76,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_LOGOUT_ON_GET = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4' 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 MIDDLEWARE = [
