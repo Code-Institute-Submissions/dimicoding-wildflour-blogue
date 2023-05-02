@@ -3,19 +3,20 @@
 
 {% block content %}
 
-<h1>Delete my Recipe</h1>
-<h3>Delete: {{ recipe.title }} </h3>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="form-group">
-        <form method="POST">
-          {% csrf_token %}
-          <strong>Are you sure you want to delete {{ recipe.title }}</strong>
-          <button class="btn btn-outline-dark">Delete</button>
-        </form>
-      </div>
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <h2 class="title-one-d mt-5">Delete my Recipe</h2>
+            <h5 class="title-one">Delete: {{ recipe.title }} </h5>
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    <strong class="title-one mt-5">You are about to delete your recipe "{{ recipe.title }}". Are you sure? </strong>
+                    <br>
+                <button class="btn btn-outline-dark mt-3">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 {% endblock content %}

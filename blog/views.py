@@ -158,6 +158,10 @@ class TheRecipeView(DetailView):
 
 
 class CreateRecipeView(CreateView):
+    """
+    CRUD Functionality
+    Ability for the user to create a recipe
+    """
     model = Recipe
     form_class = RecipeForm
     template_name = 'create.html'

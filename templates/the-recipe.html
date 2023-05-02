@@ -78,13 +78,13 @@
 <div class="container text-center">
     <div class="row justify-content-center">
         <div class="col-sm-12 col-md-6">
-            <h3 class="title-one">{{recipe.title}}</h3>
+            <h3 class="title-one mt-3">{{recipe.title}}</h3>
             <p class="mt-3">{{ recipe.content|safe }}</p>
             <hr>
-            <h4 class="title-one">Ingredients:</h4>
+            <h4 class="title-one mt-3">Ingredients:</h4>
             <p class="mt-3">{{ recipe.ingredients|safe }}</p>
             <hr>
-            <h4 class="title-one">Instructions:</h4>
+            <h4 class="title-one mt-3">Instructions:</h4>
             <p class="mt-3">{{ recipe.instructions|safe }}</p>
 
         </div>
@@ -100,12 +100,13 @@
             {% with recipe.comments.count as total_comments %}
                         <strong class="text-secondary">
                             <h3 class="title-one" id="comment"><i class="far fa-comments"></i><a href="#comment">{{ total_comments }} Comments:</a></h3>
+                            <hr>
                         </strong>
             {% endwith %}
             
             {% if user.is_authenticated %}
             {% for comment in recipe.comments.all %}
-                <div class="mt-5">
+                <div class="mt-1">
                     <strong>{{ comment.name }}</strong> <small>{{ comment.created_on|date:"dS  F Y" }}</small>
                     <p>{{ comment.body|linebreaks }}</p>
                     <hr>
@@ -118,7 +119,7 @@
                     <button class="btn btn-success">Submit</button>
                 </form>
             {% else %}
-                <h4 class="title-one">Add a comment:</h4>
+                <h4 class="title-one mt-5">Add a comment:</h4>
                 <form class="mt-3" method="POST">
                     {% csrf_token %} {{ comment_form.as_p }}
                     <button class="btn btn-success">Submit</button>
@@ -131,11 +132,6 @@
 
 
 
-
-
-
-
-
 {% if user.is_authenticated %}
     {% if user.id == recipe.author.id %}
         <button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
@@ -144,6 +140,7 @@
 {% endif %}
 
 <script>
+    // Alert message after the user comments a recipe
     setTimeout(function() {
         let messages = document.getElementById("commentou");
         let alert = new bootstrap.Alert(messages);

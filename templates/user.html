@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            {% if messages %}
+            <!-- Alert message after user edits profile -->
+                <div class="alert alert-success alert-dismissible fade show" id="commentou" role="alert">
+                    {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                    <h6 class="title-one">{{ message }}</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
 <div class="container ">
     <div class="row">
         <div class="col-md-6 col-lg-6 mt-5">
@@ -20,5 +39,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Alert message after the user edits profile
+    setTimeout(function() {
+        let messages = document.getElementById("commentou");
+        let alert = new bootstrap.Alert(messages);
+        alert.close();
+    }, 5000);
+</script>
 
 {% endblock content %}

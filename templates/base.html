@@ -59,7 +59,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false"><i class="fa-solid fa-wheat-awn"></i> RecipeBook</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{% url 'categories' %}">All Recipes</a></li>
+                                <li><a class="dropdown-item" href="{% url 'categories' %}">All Categories</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 {% for item in cat_list %}
                                 <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
@@ -144,13 +144,13 @@
                         <h4>Quick Link</h4>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#" class="text-decoration-none">Home</a>
+                                <a href="{" class="text-decoration-none">Home</a>
                             </li>
                             <li>
                                 <a href="#" class="text-decoration-none">About</a>
                             </li>
                             <li>
-                                <a href="#" class="text-decoration-none">All Recipes</a>
+                                <a href="{% url 'categories' %}" class="text-decoration-none">All Categories</a>
                             </li>
                             <li>
                                 <a href="#" class="text-decoration-none">Create</a>
@@ -165,27 +165,10 @@
                     <div>
                         <h4>Categories</h4>
                         <ul class="list-unstyled">
+                            {% for item in cat_list %}
+                                <li><a class="text-decoration-none" href="{% url 'category' item %}">{{ item }}</a></li>
+                                {% endfor%}
                             <li>
-                                <a href="#" class="text-decoration-none">All Recipes</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Vegan</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Chocolate Recipes</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Fruits</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Gluten Free</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Birthday & Wedding</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-decoration-none">Christmas Recipes</a>
-                            </li>
                         </ul>
                     </div>
                 </div>
