@@ -115,8 +115,8 @@ hr{
     height: 50px;
 }
 /*______________________________________ <a> inside the image__________________________________________________*/
-.top-70{
-    top: 70%;
+.top-60{
+    top: 60%;
 }
 .footer-bgd{
     background-color: #F5F5F5;
@@ -179,12 +179,12 @@ __________*/
   }
   
   .neu-button:hover {
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #DD818E, 2px 2px 5px #bcbcbc, -2px -2px 5px #DD818E;
   }
   
   .neu-button:focus {
     outline: none;
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #DD818E, 2px 2px 5px #bcbcbc, -2px -2px 5px #DD818E;
   }
 
  .justify{
