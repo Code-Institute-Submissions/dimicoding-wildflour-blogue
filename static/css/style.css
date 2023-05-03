@@ -240,7 +240,15 @@ __________*/
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-    .mobile{
+    .mobile-car{
         height: 475px;
     }
+    .blackboard{
+        font-family: 'Playfair Display', sans-serif;
+        text-transform: none;
+    }
+    .top-50{
+        top: 15%!important;
+    }
+    
 }
