@@ -191,6 +191,10 @@ __________*/
     background-size: 100% 200%;
     transition: background-position 1s ease-in-out;
 }
+.btn-danger {
+    --bs-btn-bg: #E7717C;
+    --bs-btn-border-color: #E7717C;
+}
 /* __________________________style category images______________ */
 .lighten {
     position: relative;
