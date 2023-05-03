@@ -130,14 +130,19 @@
     </div>
 </div>
 
-
-{% if user.is_authenticated %}
-    <!-- if the user created the recipe he can edit and delete it -->
-    {% if user.id == recipe.author.id %}
-        <button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
-        <button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
-    {% endif %}
-{% endif %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            {% if user.is_authenticated %}
+                <!-- if the user created the recipe he can edit and delete it -->
+                {% if user.id == recipe.author.id %}
+                    <button class="btn btn-success"><a href="{% url 'edit_recipe' recipe.pk %}">Edit</a></button>
+                    <button class="btn btn-danger"><a href="{% url 'delete_recipe' recipe.pk %}">Delete</a></button>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 <script>
     // Alert message after the user comments a recipe
