@@ -52,7 +52,10 @@ def contact(request):
 
 
 def about(request):
-    return render(request, "about.html", {})
+     # Dropdown menu list 
+    cat_list = Category.objects.all()
+
+    return render(request, "about.html", {"cat_list": cat_list})
 
 
 def RecipeLike(request, pk):
