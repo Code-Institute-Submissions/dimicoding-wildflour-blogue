@@ -147,11 +147,27 @@ hr{
 }
 __________*/
 
-.media a i .fa-instagram, .fa-facebook, {
-    font-size: 35px!important;
-    padding: 5%!important;
-    color: #3a3a3a!important;
- }
+/* .socials i{
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+} */
+.social-networks {
+    text-align: center;
+}
+.social-networks i {
+    font-size: 150%;
+    margin: 1%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+.social-networks >li {
+    display: inline;
+}
+ul{
+    padding-inline-start: 0px;
+}
+
 
 .details{
     font-size: 13px;
