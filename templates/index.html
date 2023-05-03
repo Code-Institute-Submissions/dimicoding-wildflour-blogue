@@ -68,7 +68,7 @@
                         {% for category in cat_list_view %}
                         <div class="col mb-4 mt-3">
                             <a href="{% url 'category' category.title %}">
-                                <div class="position-relative h-100">
+                                <div class="position-relative h-100 lighten">
                                     <h3 class="position-absolute top-50 start-50 translate-middle blackboard">{{ category.title }}</h3>
                                     <img class="img-fluid rounded h-100"
                                         src="{{ category.image.url }}" alt="">
@@ -82,30 +82,28 @@
             
 
             <div class="top-margin">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col">
-                            <a href="{% url 'create_recipe' %}">
-                                <div class="position-relative">
-                                    <img class="img-fluid rounded"
-                                        src="https://res.cloudinary.com/dff71pxfw/image/upload/v1682969562/IMG_9142_xylldc.jpg"
-                                        alt="">
-                                    <h2 class="blackboard title-one position-absolute top-50 start-50 translate-middle">Create your Recipes
-                                    </h2>
-                                    <button type="button"
-                                        class="title-one-d neu-button position-absolute top-60 start-50 translate-middle"><a href="{% url 'create_recipe' %}">Begin</a></button>
-                                </div>
-                            </a>
+
+                <div class="container-fluid">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-md-4 align-self-center position-relative">
+                                <h2 class="title-one-d"><a href="{% url 'create_recipe' %}" id="createhv">Create your Recipes...</a></h2>
+                            </div>
+                            <div class="col-md-8">
+                                <img class="card-img-top rounded" width="500" height="650" style="object-fit:cover; object-position: center;"
+                                    src="https://res.cloudinary.com/dff71pxfw/image/upload/v1683128975/IMG_9126_jluauk.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
+
             <section class="top-margin">
                 <div class="container text-center mt-5">
                     <div class="row align-self-center">
                         <div class="col">
                             <h3 class="title-one-d" >What can we do for you?</h3>
                             <h5 class="title-one">Send us a message!</h5>
-                            <button type="button" class="neu-button mt-3 title-one-d"><a href="{% url 'contact' %}">Contact</a></button>
+                            <button type="button" class="btn btn-light title-one-d mt-3"><a href="{% url 'contact' %}">Contact</a></button>
                         </div>
                     </div>
                 </div>

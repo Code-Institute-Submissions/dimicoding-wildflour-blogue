@@ -28,6 +28,10 @@ def index(request):
 
 
 def contact(request):
+
+    # Dropdown menu list 
+    cat_list = Category.objects.all()
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -48,7 +52,7 @@ def contact(request):
             return render(request, "contact.html", {'name': name})
     else:
         form = ContactForm()
-    return render(request, "contact.html", {'form': form})
+    return render(request, "contact.html", {'form': form, "cat_list": cat_list })
 
 
 def about(request):

@@ -125,7 +125,7 @@ hr{
 /*______________________________________ blackboard for categories img__________________________________________*/
 
 .blackboard{
-    background-color: #000;
+    background-color: rgba(0,0,0, 0.60);
     color: #F5F5F5;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: uppercase;
@@ -165,28 +165,62 @@ __________*/
     margin-right: 25px;
  }
  
-/*______________________________________ Stylish Buttons _____________________________________________*/
+/*______________________________________ Style Buttons _____________________________________________*/
+.btn-light{
+    height: 50px;
+    width: 80px;
+    background: -moz-linear-gradient(top, #F3ECED 0%, #F9F3F2 100%);
+    background: -webkit-linear-gradient(top, #F3ECED 0%, #F9F3F2 100%);
+    background: linear-gradient(to bottom, #F3ECED 0%, #F9F3F2 100%);
+    transition: background 0.8s ease;
+    
+}
+.btn-light:hover{
+    background: -moz-linear-gradient(top, #F9F3F2 0%, #D5C0C2 100%);
+    background: -webkit-linear-gradient(top, #F9F3F2 0%, #D5C0C2  100%);
+    background: linear-gradient(to bottom, #F9F3F2 0%, #D5C0C2  100%);
+    background-position: 0 100%;
+    background-size: 100% 200%;
+    transition: background-position 1s ease-in-out;
+}
+#createhv:hover{
+    background: -moz-linear-gradient(top, #F9F3F2 0%, #D5C0C2 100%);
+    background: -webkit-linear-gradient(top, #F9F3F2 0%, #D5C0C2  100%);
+    background: linear-gradient(to bottom, #F9F3F2 0%, #D5C0C2  100%);
+    background-position: 0 100%;
+    background-size: 100% 200%;
+    transition: background-position 1s ease-in-out;
+}
+/* __________________________style category images______________ */
+.lighten {
+    position: relative;
+    overflow: hidden;
+}
 
-.neu-button {
-    background-color: #e0e0e0;
-    border-radius: 50px;
-    box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
-    color: #4d4d4d;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 11px 30px;
-    transition: all 0.2s ease-in-out;
-    border: 2px solid rgb(206, 206, 206);
-  }
-  
-  .neu-button:hover {
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #DD818E, 2px 2px 5px #bcbcbc, -2px -2px 5px #DD818E;
-  }
-  
-  .neu-button:focus {
-    outline: none;
-    box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #DD818E, 2px 2px 5px #bcbcbc, -2px -2px 5px #DD818E;
-  }
+.lighten::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.lighten:hover::before {
+    opacity: 1;
+}
+
+.lighten img {
+    transition: transform 0.5s ease;
+}
+
+.lighten:hover img {
+    transform: scale(1.2);
+}
+/* __________________________style category images done______________ */
 
  .justify{
     text-align: justify;
@@ -228,12 +262,17 @@ __________*/
     --bs-btn-hover-bg: #799974;
     --bs-btn-hover-border-color: #799974;
 }
+.pagination {
+    font-family: 'Playfair Display', sans-serif;
+    --bs-pagination-hover-color: none;
+}
+.page-link{
+    color: rgba(0, 0, 0, 0.65);
+}
 
 
 
-
-
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .navbar-expand-md .navbar-nav .dropdown-menu {
         position:unset;
   }
