@@ -83,7 +83,7 @@ hr{
 
 }
 .content{
-    padding: 16px;
+    padding-top: 25px;
 }
 
 .sticky{
@@ -237,4 +237,10 @@ __________*/
         position:unset;
   }
 
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .mobile{
+        height: 475px;
+    }
 }
