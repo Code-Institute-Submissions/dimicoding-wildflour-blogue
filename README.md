@@ -1,7 +1,7 @@
 # WildFlour Blogue
 
 
-## Links to content
+<!-- ## Links to content
 
 [**Features**](#Features)
 
@@ -43,7 +43,7 @@
 
 [**Credits**](#Credits)
 
-[**Acknowledgements**](#acknowledgements)
+[**Acknowledgements**](#acknowledgements) -->
 
 
 
