@@ -37,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["baking.herokuapp.com", "localhost", '8000-dimicoding-wildflour-blo-6kqkknrggq.us2.codeanyapp.com']
 
