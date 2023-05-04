@@ -7,6 +7,7 @@ from django.views import generic, View
 from .models import Recipe, Category, Comment
 from .forms import RecipeForm, EditForm, CommentForm, ContactForm
 from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 
 
@@ -164,7 +165,7 @@ class TheRecipeView(DetailView):
         return self.get(self, request, *args, **kwargs)
 
 
-class CreateRecipeView(CreateView):
+class CreateRecipeView(SuccessMessageMixin, CreateView):
     """
     CRUD Functionality
     Ability for the user to create a recipe
@@ -172,6 +173,7 @@ class CreateRecipeView(CreateView):
     model = Recipe
     form_class = RecipeForm
     template_name = 'create.html'
+    success_message = "Recipe successfully created!"
 
     # Dropdown menu list 
     def get_context_data(self, *args, **kwargs):
@@ -181,15 +183,21 @@ class CreateRecipeView(CreateView):
         return context
 
 
-class EditRecipeView(UpdateView):
+class EditRecipeView(SuccessMessageMixin, UpdateView):
     model = Recipe
     form_class = EditForm
     template_name = 'edit-recipe.html'
+    success_message = "Your Recipe was successfully updated!"
 
 
-class DeleteRecipeView(DeleteView):
+class DeleteRecipeView(SuccessMessageMixin, DeleteView):
     model = Recipe
     template_name = 'delete-recipe.html'
     success_url = reverse_lazy('home')
+    success_message = "Your Recipe was successfully deleted!"
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeleteRecipeView, self).delete(request, *args, **kwargs)
 
 
