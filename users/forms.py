@@ -15,7 +15,7 @@ class EditUserForm(UserChangeForm):
     
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email'] #'password']
+        fields = ['username', 'first_name', 'last_name', 'email']  #'password']
 
     def clean_email(self):
         email = self.cleaned_data['email']
