@@ -1,6 +1,6 @@
 <h1 align="center">WildFlour Blogue</h1>
 
-Wildflour-blog has its main purpose to inform, educate, and entertain the audience. Here, people with a passion for baking will find different categories within baking, with specific recipes to explore, the ability to share their own recipes with the community, improve their baking skills, and interact with the authors of the recipes in the comment section.
+<p align="justify">Wildflour-blog has its main purpose to inform, educate, and entertain the audience. Here, people with a passion for baking will find different categories within baking, with specific recipes to explore, the ability to share their own recipes with the community, improve their baking skills, and interact with the authors of the recipes in the comment section.</p>
 
 <br>
 
@@ -14,7 +14,7 @@ Wildflour-blog has its main purpose to inform, educate, and entertain the audien
     - [User Experience](#user-experience)
         - [User Stories](#)
     - [Design](#design)
-        - [Colours](#colors)
+        - [Colours](#colours)
         - [Fonts](#fonts)
         - [Images](#images)
         - [Wireframes](#wireframes)
@@ -104,6 +104,27 @@ Wildflour-blog has its main purpose to inform, educate, and entertain the audien
 <br>
 
 15. As a user, I want to be able to easily access a contact page on the website so that I can send a message to the website's administrators.
+
+
+## Design
+### Colours
+
+
+### Fonts
+
+
+### Images 
+
+### Wireframes
+- Basamiq wireframes was used to create the blueprint for this project
+
+<p align="center"><img src="DOCS/readme/gifs/wireframes_AdobeExpress.gif" alt="Wireframes"></p>
+
+
+### Database
+
+
+
 
 # Agile
 Adopting agile principles and learning Django for the first time presented some initial challenges for me. I needed to work quickly due to the accelerated pace of the project, so I prioritized creating basic functionality first and focusing on meeting pass criteria. As I progressed, I added user stories to GitHub's project and worked on each one for an average of two days.
