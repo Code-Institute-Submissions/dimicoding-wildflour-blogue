@@ -107,26 +107,33 @@
 
 
 ## Design
-### <strong>Colours
+### **Colours**
+<strong>
 </strong> 
 
+![Color Gradient](DOCS/readme/img/colours.png)
+<br>
 
-### <strong>Fonts
-</strong>
-
-### <strong>Images
-</strong>
+Color Gradients for this website were generated with [Colorate](https://colorate.azurewebsites.net/)
 
 
-### <strong>Wireframes
-</strong>
+### **Fonts**
+
+- Logo Heading Font: 'Licorice', cursive;
+- Logo Sub-Heading Font: 'Montserrat', sans-serif;
+- BlackBoard Font(Categories): 'Roboto Condensed', sans-serif;
+- Heading/Alert messages Font: 'Playfair Display', serif;
+
+All fonts used in this website were taken from [Google Fonts](https://fonts.google.com/)
+
+### **Wireframes**
 
 - Basamiq wireframes was used to create the blueprint for this project
 
 <p align="center"><img src="DOCS/readme/gifs/wireframes_AdobeExpress.gif" alt="Wireframes"></p>
 
-### <strong>Database
-</strong>
+
+### **Database**
 <p align="justify">I used Elephant PostgreSQL as the relational database management system for this Django app. The model, depicted in the diagram, visually illustrates the structure of the PostgreSQL database, such as tables, columns, relationships. 
 <br>
 In terms of data models, there is a User model, which is part of the Django allauth library. This model includes basic information about authenticated users, and has the following fields: username, password, and email.</p>
@@ -135,7 +142,10 @@ In terms of data models, there is a User model, which is part of the Django alla
 <p align="center"><img src="DOCS/readme/img/ERD%20database.png" alt="Wireframes"></p>
 
 
+### <strong>Images
+</strong>
 
+- The images presented on this website are under my ownership.
 
 
 # Agile
