@@ -21,15 +21,20 @@
         - [Database](#database)
 - [Agile](#target-audience)
 - [Features](#features)
-    <!-- - [Nav Bar](#navigation-bar)
+    - [Navigation Bar](#navigation-bar)
     - [The Landing Page](#the-landing-page)
-    - [First Section and Aside](#first-section--recipes-and-aside-section)
-    - [Second Section](#second-section--sneak-peek-into-my-classroom)
+    - [Categories](#second-section--sneak-peek-into-my-classroom)
     - [Footer](#footer)
-    - [Recipes page](#recipes-page)
-    - [Life As A Pastry Student](#life-as-a-pastry-student)
+    - [Blog](#blog)
+    - [Blog Category](#blog-category)
+    - [Recipe](#recipe)
+    - [Create Recipes](#create-recipe)
     - [About Page](#about-page)
-    - [Contact Page](#contact) -->
+    - [Contact Page](#contact)
+    - [User](#user)
+    - [Login](#login)
+    - [Register](#register)
+    - [Logout](#logout)
 - [Features Left to Implement](#features-left-to-implement)
 - [Testing](#testing)
     - [Validator Testing](#validator-testing)
@@ -165,7 +170,30 @@ While I didn't plan my project from start to finish, using the agile methodology
 
 ![Agile principles- Project](DOCS/readme/img/projects.png)
 
+# Features
 
+## Navigation Bar
+
+![Navigation Bar](DOCS/readme/img/navbar.png)
+- Mobile version, dropdown menu.
+![Navigation Bar](DOCS/readme/img/navbar-dropdown.png)
+
+
+## The Landing Page
+
+## Categories
+## Footer
+## Blog
+## Blog Category
+## Recipe
+## Create Recipes
+## About Page
+## Contact Page
+## User
+## Login
+
+## Register
+## Logout
 
 
 ## Credits
