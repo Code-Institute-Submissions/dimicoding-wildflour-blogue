@@ -178,22 +178,65 @@ While I didn't plan my project from start to finish, using the agile methodology
 - Mobile version, dropdown menu.
 ![Navigation Bar](DOCS/readme/img/navbar-dropdown.png)
 
-
 ## The Landing Page
 
+<p align="center"><img src="DOCS/readme/gifs/index_AdobeExpress.gif"></p>
+<!-- ![The Landing Page](DOCS/readme/gifs/index_AdobeExpress.gif) -->
+
 ## Categories
+
+![Categories](DOCS/readme/img/categories-page.png)
+
 ## Footer
+
+![Footer](DOCS/readme/img/footer.png)
+
 ## Blog
+
+<p align="center"><img src="DOCS/readme/gifs/blog.gif"></p>
+<!-- ![Blog](DOCS/readme/gifs/blog.gif) -->
+
+
 ## Blog Category
+
+![Blog Categoriy](DOCS/readme/img/categoryview.png)
+
 ## Recipe
+
+<p align="center"><img src="DOCS/readme/gifs/therecipe_AdobeExpress.gif"></p>
+<!-- ![Categories](DOCS/readme/gifs/therecipe_AdobeExpress.gif) -->
+
 ## Create Recipes
+
+<p align="center"><img src="DOCS/readme/gifs/create_AdobeExpress.gif"></p>
+<!-- ![Create Recipe](DOCS/readme/gifs/create_AdobeExpress.gif) -->
+
 ## About Page
+
+![About Page](DOCS/readme/img/about.png)
+
+
 ## Contact Page
+
+![Contact Page](DOCS/readme/img/contact.png)
+
+
 ## User
+
+![User](DOCS/readme/img/updateuser.png)
+
+
 ## Login
 
+![Login](DOCS/readme/img/login.png)
+
 ## Register
+
+![Register](DOCS/readme/img/register.png)
+
 ## Logout
+
+
 
 
 ## Credits
