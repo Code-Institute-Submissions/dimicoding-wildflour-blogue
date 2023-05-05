@@ -53,6 +53,55 @@ Wildflour-blog has its main purpose to inform, educate, and entertain the audien
 - Share personal insights into studying at one of the most popular French pastry schools.
 - Provide foresight of future employment possibilities, such as catering and wedding cakes.
 
+# User Experience
+## User Stories
+
+ #### EPIC: Create a Base.htm with navigation and footer
+<br>
+
+1. As a user, I want to easily navigate and explore a website with a clean and intuitive layout that allows me to find the information I need quickly and efficiently .
+
+2. As a visitor, I want to scroll down on the homepage, so that I can quickly see the content of the blog.
+
+3. As a user, I want a straightforward footer so that I can easily find the website's links to other categories and social media platforms.
+
+#### EPIC: User Registration
+<br>
+
+4. As a user, I want to log in to the blog so that I can access more features and content that are only available to registered users.
+
+5. As a user, I want to sign up for the website quickly and easily so that I can start using the full functionality of the blog and enjoy a seamless user experience.
+
+6. As a user, I want to log out from the blog whenever I want so that my personal details are not displayed to anyone who may use the device after me.
+
+#### EPIC: User Authentication & CRUD Functionality
+<br>
+
+7. As a site owner, I want to restrict access to certain sections of the app to unauthenticated users so that basic data protection standards are met and unauthorized access to sensitive information is prevented.
+
+8. As a user, I want to create, read, update, and delete blog posts to share my recipes with the community
+
+9. As a user, I want to be able to easily edit my published blog posts, so that I can correct errors, improve the content and keep my readers engaged.
+
+10. As a user, I want to delete a blog post so that I can remove content that is no longer relevant or necessary.
+
+11. As a user, I want to be able to update my profile information so that my account reflects accurate and current information about me.
+
+#### EPIC: Blog Post Features
+<br>
+
+12. As a user, I want to be able to store different recipes in separate categories so that I can easily access them based on my needs.
+
+13. As a user, I want to be able to like or unlike posts in the blog so that I can show recognition for the content the author created.
+
+14. As a user, I want to be able to comment on a post so that I can share my thoughts and engage with other users.
+
+#### EPIC: Contact Form
+<br>
+
+15. As a user, I want to be able to easily access a contact page on the website so that I can send a message to the website's administrators.
+
+
 
 
 
