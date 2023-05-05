@@ -142,8 +142,7 @@ In terms of data models, there is a User model, which is part of the Django alla
 <p align="center"><img src="DOCS/readme/img/ERD%20database.png" alt="Wireframes"></p>
 
 
-### <strong>Images
-</strong>
+### **Images**
 
 - The images presented on this website are under my ownership.
 
