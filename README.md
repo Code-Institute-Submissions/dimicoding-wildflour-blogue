@@ -2,6 +2,10 @@
 
 Wildflour-blog has its main purpose to inform, educate, and entertain the audience. Here, people with a passion for baking will find different categories within baking, with specific recipes to explore, the ability to share their own recipes with the community, improve their baking skills, and interact with the authors of the recipes in the comment section.
 
+<br>
+
+![Am i Responsive](DOCS/readme/img/pp4%20iamresponsive.png)
+
 ### Table of Contents
 
 - [UX](#ux)
@@ -9,13 +13,13 @@ Wildflour-blog has its main purpose to inform, educate, and entertain the audien
     - [Website owner business goals](#website-owner-business-goals)
     - [User Experience](#user-experience)
         - [User Stories](#)
-    - [Agile](#target-audience)
-    - [Structure of the website](#structure-of-the-website)
-    - [Wireframes](#wireframes)
-    - [Surface](#surface)
-        - [Color](#colors)
+    - [Design](#design)
+        - [Colours](#colors)
         - [Fonts](#fonts)
         - [Images](#images)
+        - [Wireframes](#wireframes)
+        - [Database](#database)
+- [Agile](#target-audience)
 - [Features](#features)
     <!-- - [Nav Bar](#navigation-bar)
     - [The Landing Page](#the-landing-page)
@@ -101,9 +105,23 @@ Wildflour-blog has its main purpose to inform, educate, and entertain the audien
 
 15. As a user, I want to be able to easily access a contact page on the website so that I can send a message to the website's administrators.
 
+# Agile
+Adopting agile principles and learning Django for the first time presented some initial challenges for me. I needed to work quickly due to the accelerated pace of the project, so I prioritized creating basic functionality first and focusing on meeting pass criteria. As I progressed, I added user stories to GitHub's project and worked on each one for an average of two days.
+<br>
 
+While I didn't plan my project from start to finish, using the agile methodology gave me the flexibility to work through each user story as it was added. I found it helpful to prioritize functionality and pass criteria, rather than trying to include everything at once. This allowed me to make progress quickly and adjust my approach as needed. Moving forward, I plan to continue using agile principles to stay flexible and responsive to changing project requirements.
 
+<br>
 
+## Agile principles- GitHub Issues
+
+![Agile principles- Issues](DOCS/readme/gifs/agile_issues_AdobeExpress.gif)
+
+<br>
+
+## Agile principles- GitHub Issues
+
+![Agile principles- Project](DOCS/readme/img/projects.png)
 
 
 
