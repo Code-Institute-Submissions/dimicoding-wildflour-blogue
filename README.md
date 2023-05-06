@@ -256,7 +256,9 @@ While I didn't plan my project from start to finish, using the agile methodology
 ## Recipe
 
 - Features detailed instructions and ingredients for preparing a specific dish
+
 - Includes an image, ingrediensts, instructions to help users visualize the cooking process.
+
 - Comment section
 
 <details><summary>Recipe .gif</summary>
