@@ -379,6 +379,10 @@ While I didn't plan my project from start to finish, using the agile methodology
 
 - Login: Social authentication login with gmail, facebook, instagram...
 
+# Testing
+
+Click [**here**](TESTING.md) to go to the testing.
+
 # Fixed Bugs
 
 Throughout this project, several issues have arisen. While some were resolved through my own efforts, others were more challenging and required the assistance of the tutor team at Code Institute. I would like to express my immense gratitude to them for helping me quickly identify my mistakes and save my precious time.
