@@ -261,6 +261,11 @@ While I didn't plan my project from start to finish, using the agile methodology
 
 - Comment section
 
+<details><summary>Recipe -Screenshot</summary>
+<p align="center"><img src="DOCS/readme/img/recipe.png"></p>
+</details>
+<br>
+
 <details><summary>Recipe .gif</summary>
 <p align="center"><img src="DOCS/readme/gifs/therecipe_AdobeExpress.gif"></p>
 </details>
