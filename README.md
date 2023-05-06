@@ -365,6 +365,28 @@ While I didn't plan my project from start to finish, using the agile methodology
 </details>
 <br>
 
+# Features Left to Implement
+
+- User profiles: Users should be able to create their own profile, including the ability to upload a profile image and add a description about themselves. They should also be able to add their social media accounts or contact details.
+
+- Favorites: Users should have their own space where they can view posts they've added to their favorites, so they can access them easily.
+
+- User Recipe management: Users should be able to view, edit, or delete recipes they've created on their personalized space.
+
+- Newsletter subscription: There should be an option for users to subscribe to a newsletter at the footer of the website. This will allow users to receive updates about the blog and new features.
+
+- Contact form: Currently, the contact form uses a console to print out users' contact requests. In the future, this should be replaced with an SMTP provider so that the website can send actual emails to the website administrators.
+
+- Login: Social authentication login with gmail, facebook, instagram...
+
+# Fixed Bugs
+
+
+## Unresolved bug
+- Change password field on the user update page: The change password field is appearing on the user update page, but it is not accessible. If the field is hidden, the user is unable to update their username, name, or email. We couldn't find a solution for this issue with the help of our tutors or mentors. More time is needed to solve this issue. Images provided in the [Bugs Section](#bugs)
+
+
+
 
 
 ## Credits

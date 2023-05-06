@@ -11,7 +11,7 @@ class EditUserForm(UserChangeForm):
     first_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class':'form-control'}))
-    # password = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'class': 'form-control', 'type':'hidden'}))
+    password = forms.EmailField(required=False, widget=forms.EmailInput(attrs={'class': 'form-control', 'type':'hidden'}))
     
     class Meta:
         model = User
