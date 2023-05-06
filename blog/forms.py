@@ -8,14 +8,20 @@ from django_summernote.widgets import SummernoteWidget
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('body',)
+        fields = ("body",)
         widgets = {
             # 'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder':'"We would love to hear your thoughts and more about your experience with this recipe..."'}),
+            "body": forms.Textarea(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": '"We would love to hear your thoughts and "\
+                         more about your experience with this recipe..."',
+                }
+            ),
         }
 
 
-categories = Category.objects.all().values_list('title', 'title')
+categories = Category.objects.all().values_list("title", "title")
 """ Loop trought the created categories"""
 cat_list = []
 for item in categories:
@@ -23,80 +29,144 @@ for item in categories:
 
 
 class RecipeForm(forms.ModelForm):
-    """ Create Recipe- Used from https://github.com/summernote/django-summernote """
-    
-    featured_image = CloudinaryField('image')
+    """
+    Create Recipe- Used from https://github.com/summernote/django-summernote
+    """
+
+    featured_image = CloudinaryField("image")
 
     class Meta:
         model = Recipe
-        fields = ['title',
-                  'author',
-                  'category',
-                  'dificulty',
-                  'total_time',
-                  'featured_image',
-                  'content',
-                  'ingredients',
-                  'instructions',
-                  'exerpt',
-                  'status']
+        fields = [
+            "title",
+            "author",
+            "category",
+            "dificulty",
+            "total_time",
+            "featured_image",
+            "content",
+            "ingredients",
+            "instructions",
+            "exerpt",
+            "status",
+        ]
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'author': forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id': 'user', 'type':'hidden'}),
-            'category': forms.Select(choices=cat_list, attrs={'class': 'form-control'}),
-            'dificulty': forms.Select(attrs={'class': 'form-control'}),
-            'total_time': forms.NumberInput(attrs={'class': 'form-control'}),
-            'content': SummernoteWidget(),
-            'ingredients': SummernoteWidget(attrs={'summernote': {'toolbar': [
-                ['para', ['ul', 'paragraph']],
-                ['font', ['bold', 'italic', 'underline']],
-                ['insert', ['picture']]]}}),
-            'instructions': SummernoteWidget(attrs={'summernote': {'toolbar': [
-                ['para', ['ol', 'paragraph']],
-                ['font', ['bold', 'italic', 'underline']],
-                ['insert', ['picture']]]}}),
-            'exerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '"Share a sneak peek of this delicious recipe! Write a short and catchy excerpt that will make others want to try it out."'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
+            "title": forms.TextInput(attrs={"class": "form-control"}),
+            "author": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "value": "",
+                    "id": "user",
+                    "type": "hidden",
+                }
+            ),
+            "category": forms.Select(
+                choices=cat_list, attrs={"class": "form-control"}),
+            "dificulty": forms.Select(attrs={"class": "form-control"}),
+            "total_time": forms.NumberInput(attrs={"class": "form-control"}),
+            "content": SummernoteWidget(),
+            "ingredients": SummernoteWidget(
+                attrs={
+                    "summernote": {
+                        "toolbar": [
+                            ["para", ["ul", "paragraph"]],
+                            ["font", ["bold", "italic", "underline"]],
+                            ["insert", ["picture"]],
+                        ]
+                    }
+                }
+            ),
+            "instructions": SummernoteWidget(
+                attrs={
+                    "summernote": {
+                        "toolbar": [
+                            ["para", ["ol", "paragraph"]],
+                            ["font", ["bold", "italic", "underline"]],
+                            ["insert", ["picture"]],
+                        ]
+                    }
+                }
+            ),
+            "exerpt": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": '"Share a sneak peek of this delicious"\
+                         recipe! Write a short and catchy excerpt that"\
+                             will make others want to try it out."',
+                }
+            ),
+            "status": forms.Select(attrs={"class": "form-control"}),
         }
 
 
 class EditForm(forms.ModelForm):
-    '''Edit Recipe'''
-    featured_image = CloudinaryField('image')
+    """Edit Recipe"""
+
+    featured_image = CloudinaryField("image")
 
     class Meta:
         model = Recipe
-        fields = ['title',
-                  'category',
-                  'dificulty',
-                  'total_time',
-                  'featured_image',
-                  'content',
-                  'ingredients',
-                  'instructions',
-                  'exerpt',
-                  'status']
+        fields = [
+            "title",
+            "category",
+            "dificulty",
+            "total_time",
+            "featured_image",
+            "content",
+            "ingredients",
+            "instructions",
+            "exerpt",
+            "status",
+        ]
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'category': forms.Select(choices=cat_list, attrs={'class': 'form-control'}),
-            'dificulty': forms.Select(attrs={'class': 'form-control'}),
-            'total_time': forms.NumberInput(attrs={'class': 'form-control'}),
-            'content': SummernoteWidget(),
-            'ingredients': SummernoteWidget(attrs={'summernote': {'toolbar': [
-                ['para', ['ul', 'paragraph']],
-                ['font', ['bold', 'italic', 'underline']],
-                ['insert', ['picture']]]}}),
-            'instructions': SummernoteWidget(attrs={'summernote': {'toolbar': [
-                ['para', ['ol', 'paragraph']],
-                ['font', ['bold', 'italic', 'underline']],
-                ['insert', ['picture']]]}}),
-            'exerpt': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '"Share a sneak peek of this delicious recipe! Write a short and catchy excerpt that will make others want to try it out."'}),
-            'status': forms.Select(attrs={'class': 'form-control'}),
+            "title": forms.TextInput(attrs={"class": "form-control"}),
+            "category": forms.Select(
+                choices=cat_list, attrs={"class": "form-control"}),
+            "dificulty": forms.Select(attrs={"class": "form-control"}),
+            "total_time": forms.NumberInput(attrs={"class": "form-control"}),
+            "content": SummernoteWidget(),
+            "ingredients": SummernoteWidget(
+                attrs={
+                    "summernote": {
+                        "toolbar": [
+                            ["para", ["ul", "paragraph"]],
+                            ["font", ["bold", "italic", "underline"]],
+                            ["insert", ["picture"]],
+                        ]
+                    }
+                }
+            ),
+            "instructions": SummernoteWidget(
+                attrs={
+                    "summernote": {
+                        "toolbar": [
+                            ["para", ["ol", "paragraph"]],
+                            ["font", ["bold", "italic", "underline"]],
+                            ["insert", ["picture"]],
+                        ]
+                    }
+                }
+            ),
+            "exerpt": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": '"Share a sneak peek of this delicious"\
+                         recipe! Write a short and catchy excerpt that"\
+                             will make others want to try it out."',
+                }
+            ),
+            "status": forms.Select(attrs={"class": "form-control"}),
         }
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
-    email = forms.EmailField(required=True, widget=forms.TextInput(attrs={'class':'form-control'}))
-    message = forms.CharField(required=True, widget=forms.Textarea(attrs={'class':'form-control'}))
+    name = forms.CharField(
+        required=True, widget=forms.TextInput(attrs={"class": "form-control"})
+    )
+    email = forms.EmailField(
+        required=True, widget=forms.TextInput(attrs={"class": "form-control"})
+    )
+    message = forms.CharField(
+        required=True, widget=forms.Textarea(attrs={"class": "form-control"})
+    )
