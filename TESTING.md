@@ -47,9 +47,11 @@
 ### W3C HTML validator
 
 - A total of 7 html errors were found on the website which were quickly fixed
+
 ![HTML Validator](DOCS/testing/validation/W3C-htmlvalidation.png)
 
 ### W3C Jigsaw validator
 
 - After trying to run CSS validator by the website URL the validator crashed three times. By direct upload of CSS code 2 errors were found and fixed.
+
 ![CSS Validator](DOCS/testing/validation/cssval.png)
