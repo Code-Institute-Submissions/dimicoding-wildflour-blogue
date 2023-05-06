@@ -173,69 +173,190 @@ While I didn't plan my project from start to finish, using the agile methodology
 # Features
 
 ## Navigation Bar
+<br>
 
-![Navigation Bar](DOCS/readme/img/navbar.png)
+- Allows users to easily navigate to different sections of the website.
+
+- Includes links to the landing page, categories, blog, about, contact and user account pages
+
+<details><summary>Navigation Bar -Screenshot</summary>
+<img src="DOCS/readme/img/navbar.png">
+</details>
+<br>
+
+<!-- ![Navigation Bar](DOCS/readme/img/navbar.png) -->
 - Mobile version, dropdown menu.
-![Navigation Bar](DOCS/readme/img/navbar-dropdown.png)
+
+<details><summary>Navigation Bar -Screenshot</summary>
+<img src="DOCS/readme/img/navbar-dropdown.png">
+</details>
+<br>
+<!-- ![Navigation Bar](DOCS/readme/img/navbar-dropdown.png) -->
 
 ## The Landing Page
 
+- Introduction to the website and its content.
+
+- Feature images, carousel, and links to other sections of the website.
+
+<details><summary>The Landing Page</summary>
 <p align="center"><img src="DOCS/readme/gifs/index_AdobeExpress.gif"></p>
+</details>
+
+
 <!-- ![The Landing Page](DOCS/readme/gifs/index_AdobeExpress.gif) -->
 
 ## Categories
 
-![Categories](DOCS/readme/img/categories-page.png)
+- Organizes content into specific topics or themes.
+
+- Allows users to easily find and browse related content.
+
+<details><summary>Categories -Screenshot</summary>
+<img src="DOCS/readme/img/categories-page.png">
+</details>
+<br>
+<!-- ![Categories](DOCS/readme/img/categories-page.png) -->
 
 ## Footer
 
-![Footer](DOCS/readme/img/footer.png)
+- Includes additional links, contact information and social media icons.
+
+<details><summary>Footer -Screenshot</summary>
+<img src="DOCS/readme/img/footer.png">
+</details>
+<br>
+
+<!-- ![Footer](DOCS/readme/img/footer.png) -->
 
 ## Blog
 
+- Features posts on a variety of categories.
+
+<details><summary>Blog .gif</summary>
 <p align="center"><img src="DOCS/readme/gifs/blog.gif"></p>
+</details>
+<br>
+
+
 <!-- ![Blog](DOCS/readme/gifs/blog.gif) -->
 
 
 ## Blog Category
 
-![Blog Categoriy](DOCS/readme/img/categoryview.png)
+- Similar to regular categories, but specifically for organizing blog content.
+- Helps users find posts on specific topics.
+
+<details><summary>Blog Category -Screenshot</summary>
+<img src="DOCS/readme/img/categoryview.png">
+</details>
+<br>
+<!-- ![Blog Categoriy](DOCS/readme/img/categoryview.png) -->
 
 ## Recipe
 
+- Features detailed instructions and ingredients for preparing a specific dish
+- Includes an image, ingrediensts, instructions to help users visualize the cooking process.
+- Comment section
+
+<details><summary>Recipe .gif</summary>
 <p align="center"><img src="DOCS/readme/gifs/therecipe_AdobeExpress.gif"></p>
+</details>
+<br>
+
 <!-- ![Categories](DOCS/readme/gifs/therecipe_AdobeExpress.gif) -->
 
 ## Create Recipes
 
+- Allows users to contribute their own recipes to the website.
+
+- Includes a form for users to input Title, category, time needed, ingredients, cooking instructions, feature image and a excerpt.
+
+<details><summary>Create Recipe .gif</summary>
 <p align="center"><img src="DOCS/readme/gifs/create_AdobeExpress.gif"></p>
+</details>
+<br>
+
 <!-- ![Create Recipe](DOCS/readme/gifs/create_AdobeExpress.gif) -->
 
 ## About Page
 
-![About Page](DOCS/readme/img/about.png)
+- Provides information about the website and its mission.
+
+
+<details><summary>About Page -Screenshot</summary>
+<img src="DOCS/readme/img/about.png">
+</details>
+<br>
+
+<!-- ![About Page](DOCS/readme/img/about.png) -->
 
 
 ## Contact Page
 
-![Contact Page](DOCS/readme/img/contact.png)
+- Allows users to get in touch with the website's creators or administrators
+- Includes a contact form
+
+<details><summary>Contact Page -Screenshot</summary>
+<img src="DOCS/readme/img/contact.png">
+</details>
+<br>
+
+<!-- ![Contact Page](DOCS/readme/img/contact.png) -->
 
 
 ## User
 
-![User](DOCS/readme/img/updateuser.png)
+- Section of the website dedicated to user accounts.
+
+- Includes options for managing profile information, like, name, username and email.
+
+<details><summary>User -Screenshot</summary>
+<img src="DOCS/readme/img/updateuser.png">
+</details>
+<br>
+
+<!-- ![User](DOCS/readme/img/updateuser.png) -->
 
 
 ## Login
 
-![Login](DOCS/readme/img/login.png)
+- Allows users to sign in to their account.
+
+- Requires a username and password.
+
+- Option to login with GitHub.
+
+<details><summary>Login -Screenshot</summary>
+<img src="DOCS/readme/img/login.png">
+</details>
+<br>
+
+<!-- ![Login](DOCS/readme/img/login.png) -->
 
 ## Register
 
-![Register](DOCS/readme/img/register.png)
+- Allows new users to create an account.
+
+- Requires users to provide their name, email address, and choose a password.
+
+<details><summary>Register -Screenshot</summary>
+<img src="DOCS/readme/img/register.png">
+</details>
+<br>
+
+<!-- ![Register](DOCS/readme/img/register.png) -->
 
 ## Logout
 
+- Allows users to sign out of their account.
+
+- Redirects users back to the landing page.
+
+<details><summary>Logout in navbar -Screenshot</summary>
+<img src="DOCS/readme/img/navbar.png">
+</details>
+<br>
 
 
 
