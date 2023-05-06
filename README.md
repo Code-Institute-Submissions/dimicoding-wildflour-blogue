@@ -381,9 +381,47 @@ While I didn't plan my project from start to finish, using the agile methodology
 
 # Fixed Bugs
 
+Throughout this project, several issues have arisen. While some were resolved through my own efforts, others were more challenging and required the assistance of the tutor team at Code Institute. I would like to express my immense gratitude to them for helping me quickly identify my mistakes and save my precious time.
 
-## Unresolved bug
-- Change password field on the user update page: The change password field is appearing on the user update page, but it is not accessible. If the field is hidden, the user is unable to update their username, name, or email. We couldn't find a solution for this issue with the help of our tutors or mentors. More time is needed to solve this issue. Images provided in the [Bugs Section](#bugs)
+<strong>Database Bug:</strong>
+
+- Required to make the reset of the Elephant PostgreSQL database in order to fix the issue. 
+<br>
+
+![Database bug](DOCS/readme/img/bug.png)
+
+<strong>NoMatchError:</strong>
+
+- Required to properly set up "pk" in the view and urls to fix this issue. 
+<br>
+
+![Database bug](DOCS/readme/img/error.png)
+
+
+<strong>etag Error:</strong>
+
+- To this day still having troubles understanding this error. Changing configvars in Heroku seem to fix this issue. 
+<br>
+
+![Database bug](DOCS/readme/img/etag.png)
+
+<strong>CSS not loading:</strong>
+
+- This issue is apperantly related to etag error. fixed after the configvars manipulations and static file removal from Cloudinary.
+<br>
+
+![Database bug](DOCS/readme/img/noerror.png)
+
+
+<strong>Summernote not loading:</strong>
+
+- This issue appeared when the deployed version was set to True, appears to be fixed after the configvars manipulations and Debug set to false.
+<br>
+
+![Database bug](DOCS/readme/img/summernoote.png)
+
+
+
 
 
 
