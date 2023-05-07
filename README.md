@@ -4,7 +4,13 @@
 
 <br>
 
+**[Go to the Website](https://baking.herokuapp.com/)**
+
 ![Am i Responsive](DOCS/readme/img/pp4%20iamresponsive.png)
+
+**[GitHub Repository](https://github.com/dimicoding/wildflour-blogue)**
+
+<br>
 
 ### Table of Contents
 
