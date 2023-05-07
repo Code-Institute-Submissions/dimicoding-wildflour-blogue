@@ -419,13 +419,51 @@ Throughout this project, several issues have arisen. While some were resolved th
 
 ![Database bug](DOCS/readme/img/summernoote.png)
 
+# Deployment
+
+- Log in to Heroku.
+- On the main page, click the "New" button located in the top right corner
+- From the drop-down menu, select "Create New App"
+- Choose a unique name for your app
+- Select your preferred region
+- Click on the "Create App" button
+- Click on "Reveal Config Vars" and add a new record with "SECRET_KEY"
+- Click on "Reveal Config Vars" and add a new record with "CLOUDINARY_URL"
+- Click on "Reveal Config Vars" and add a new record with "DISABLE_COLLECTSTATIC=1"
+- Scroll to the top of the page and select the "Deploy" tab
+- Choose "Github" as the deployment method
+- Confirm that you want to connect to GitHub
+- Search for the repository name and click the "Connect" button
+- Scroll to the bottom of the deploy page and select your preferred deployment type
+- Click on "Deploy Brunch".
 
 
+# Credits
 
+Sticky nav bar- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_navbar_sticky
 
+Layout for blog post inspired from: https://sugarthumb.co.uk/2021/09/22/vegan-coconut-pancake-recipe/
 
+Colors: https://colorate.azurewebsites.net/Color/F3ECED
 
+Databases with django: https://www.youtube.com/watch?v=A1nqCgAM6CE&list=PLCC34OHNcOtoYVT2654KIzait8_eYO_j5
 
-## Credits
+Using "pk", edit user profile: https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi
 
-sticky nav bar- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_navbar_sticky
+Comment/likes and more, Code institute walktrought project:"Think therefore I blog"
+
+Other coding ideas presented in my blog website and README.md where taken from the following projects:
+
+- https://github.com/PedroCristo/portfolio_project_4/tree/main
+- https://github.com/rockroman/CI_PP4-Knowledge-Flow/tree/main
+- https://github.com/quiltingcode/pp4-craft-cafe/tree/main
+- https://github.com/lestece/myKTCN/tree/main
+- https://github.com/johnrearden/just-beats/tree/main
+- https://github.com/paulie-o74/newsbox86/tree/main
+
+# Acknowledgments
+
+- I am incredibly grateful to the tutor team at Code Institute for their unwavering support.
+- Thanks to Paul Thomas O’Riordan, Cohort Facilitator for sharing tips, material, and personal experience.
+- Thanks to my mentor Adegbenga Adeye for the feedback and disponibility.
+
