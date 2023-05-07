@@ -73,6 +73,21 @@
 
 ## Responsiveness
 
+- All website pages have been designed to be responsive, ensuring they adapt to different screen sizes and devices.
+
+- The design has been tested on multiple browsers, including Microsoft Edge, Chrome, Opera GX, and Mi(phone-Xiaomi), to ensure that it looks and functions well across different platforms.
+
+- Bootstrap responsive classes were utilized to create a responsive design for this project.
+
+- The design was tested using Chrome DevTools, a browser-based tool for testing and debugging responsive designs.
+
+- Navigation has been simplified for smaller screens, with a hamburger menu replacing the desktop navigation bar, making it easier for users to navigate the site on mobile devices.
+
+<br>
+
+- Additionaly following media queries were used:
+- @media (min-width: 320px) and (max-width: 480px) 
+- @media (min-width: 768px)
 
 ## Manual Testing
 
